@@ -42,10 +42,8 @@ h2{
 }
 
 
-img {
-    width:30%;
-    cursor: zoom-in;
-}
+img { width:30%;}
+img:hover{cursor: zoom-in;}
 
 
 #comment{width: 50%;height:50%;}
