@@ -1,0 +1,60 @@
+
+body{
+    padding-left:10%;
+    padding-right:10%;
+    padding-top: 5%;
+    color:slategrey;
+    background-color:honeydew;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+a:link {
+    color: slategrey;
+  }
+  
+  /* visited link */
+  a:visited {
+    color: lightseagreen;
+  }
+  
+  /* mouse over link */
+  a:hover {
+    color: rgb(132, 149, 226);
+    background-color: rgba(138, 255, 226, 0.842);
+  }
+  
+  /* selected link */
+  a:active {
+    color: blue;
+    
+  }
+p{
+    color: 
+
+}
+
+h2{
+    font-weight:400;
+
+}
+
+img {
+    width: 30%;
+    cursor: zoom-in;
+}
+.blue paragraph {
+
+
+}
+
+br {
+    display: block;
+    content: "";
+    margin:4%;
+ }
+
+#smallest {
+
+
+}
+html5
