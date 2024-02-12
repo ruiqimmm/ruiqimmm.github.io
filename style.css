@@ -6,18 +6,13 @@ body{
     color:slategrey;
     background-color:honeydew;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 100%;
 }
 
 a:link {
     color: slategrey;
   }
   
-  /* visited link */
-  a:visited {
-    color: lightseagreen;
-  }
-  
-  /* mouse over link */
   a:hover {
     color: rgb(132, 149, 226);
     background-color: rgba(138, 255, 226, 0.842);
@@ -26,26 +21,36 @@ a:link {
   /* selected link */
   a:active {
     color: blue;
-    
   }
-p{
-    color: 
-
-}
 
 h2{
     font-weight:400;
 
 }
 
+#btn {
+    width: 10%; 
+    height: 10%;
+    font-size: 200%;
+    text-align: justified;
+}
+#btn:hover {
+    color: rgb(73, 146, 58);
+    width:12%;
+    height: 12%;
+
+}
+
+
 img {
-    width: 30%;
+    width:30%;
     cursor: zoom-in;
 }
-.blue paragraph {
 
 
-}
+#comment{width: 50%;height:50%;}
+
+#name{width:50%;height:50%;}
 
 br {
     display: block;
