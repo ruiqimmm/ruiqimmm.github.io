@@ -23,5 +23,22 @@
     <a href="/index.html"> home </a>
     <br><script src="script.js"></script>
 
+    <script>
+        function saveData() {
+            var inputValue = document.getElementById("data").value;
+            localStorage.setItem("savedData", inputValue);
+            alert("Data saved to local storage!");
+        }
+
+        function loadData() {
+            var savedData = localStorage.getItem("savedData");
+            if (savedData) {
+                alert("Data loaded from local storage: " + savedData);
+            } else {
+                alert("No data found in local storage.");
+            }
+        }
+    </script>
+    
 </body>
 </html>
