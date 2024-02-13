@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href = "/style.css" rel="stylesheet">
+</head>
+<body>
+    <body style="background-color:#d4d4d4;">
+    1.11 02:46
+    <br> Ah,the hole <a href="./tofufreidrice.html"> is </a> 
+    still there,<a href="./tofufreidrice.html"> is </a>  that ok?
+    <br>
+    <br>
+    <br><a href="./index.html"> restart </a>
+    <div id="randomContent"></div>
+    <script>
+        function getRandomPage() {
+            var pages = [
+                "1.1.html",
+                "1.11.html",
+                "1.12.html",
+                "1.16.html",
+                "1.17.html",
+                "1.18.html",
+                "1.19.html",
+                "1.20.html",
+                "1.26.html",
+                "1.28.html",
+                "1.29.html",
+                "10.29.html",
+                "10.30.html",
+                "11.1.html",
+                "11.2.html",
+                "11.3.html",
+                "11.8.html",
+                "11.11.html",
+                "11.13.html",
+                "11.16.html",
+                "11.17.html",
+                "11.18.html",
+                "11.19.html",
+                "11.20.html",
+                "11.22.html",
+                "11.23.html",
+                "11.24.html",
+                "11.25.html",
+                "11.27.html",
+                "12.10.html",
+                "12.28.html",
+                "12.30.html",
+            ];
+
+            var randomIndex = Math.floor(Math.random() * pages.length);
+
+            return pages[randomIndex];
+        }
+
+        document.getElementById("randomLink").setAttribute("href", getRandomPage());
+    </script>
+    <br><a href=> the end </a>
+
+    
+</body>
+</html>
