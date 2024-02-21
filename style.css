@@ -9,24 +9,40 @@ body{
     font-size: 100%;
 }
 
-a:link {
-    color: slategrey;
+a {
+    color:slategrey;
+    background-color:rgba(212,212,212,0.7);
+    text-decoration:none;
   }
   
   a:hover {
-    color: rgb(132, 149, 226);
-    background-color: rgba(138, 255, 226, 0.842);
+    color:slategrey;
+    background-color: rgba(138, 255, 226, 0.700);
   }
   
   /* selected link */
   a:active {
-    color: blue;
+    color:slategrey;
   }
+
 
 h2{
     font-weight:400;
 
 }
+
+#i:hover{
+    background-color:snow;
+}
+
+#like:hover{
+    background-color:rgb(236, 175, 175);
+}
+
+#maybe:hover{
+    background-color:snow;
+}
+
 
 #btn {
     width: 10%; 
