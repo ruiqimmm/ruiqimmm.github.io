@@ -5,15 +5,15 @@ body{
     padding-top: 5%;
     color:slategrey;
     background-color:honeydew;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    /*font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;*/
     font-size: 100%;
     max-width: 100%;
 }
 
 a {
     color:slategrey;
+     color:rgb(255, 255, 255);
     background-color:rgba(212,212,212,0.7);
-    text-decoration:none;
   }
   
   a:hover {
@@ -23,7 +23,7 @@ a {
   
   /* selected link */
   a:active {
-    color:slategrey;
+    color:rgb(255, 255, 255);
   }
 
 
@@ -32,17 +32,54 @@ h2{
 
 }
 
-#i:hover{
-    background-color:snow;
-}
-
 #like:hover{
-    background-color:rgb(236, 175, 175);
+    background-color:rgb(241, 110, 154);
 }
 
 #maybe:hover{
-    background-color:snow;
+    background-color:rgb(255, 183, 183);
 }
+
+#i:hover{
+    background-color:rgb(252, 255, 49);
+}
+
+#my:hover{
+    background-color:rgb(170, 150, 123);
+}
+
+#should:hover{
+    background-color:rgb(83, 142, 253);
+}
+#is:hover{
+    background-color:rgb(247, 151, 231);
+}
+#favouritecomic:hover{
+    background-color:rgb(144, 125, 211);
+}
+#day:hover{
+    background-color:rgb(144, 125, 211);
+}
+
+#a:hover{
+    background-color:rgb(144, 125, 211);
+}
+#it:hover{
+    background-color:rgb(144, 125, 211);
+}
+#do:hover{
+    background-color:rgb(144, 125, 211);
+}
+#had:hover{
+    background-color:rgb(144, 125, 211);
+}
+#time:hover{
+    background-color:rgb(144, 125, 211);
+}
+
+
+
+
 
 
 #btn {
@@ -60,8 +97,10 @@ h2{
 
 
 img { width:30%;}
-img:hover{cursor: zoom-in;}
-
+img:hover{cursor: zoom-in;
+    transform: scale(1.5);
+    display:fixed;
+}
 
 #comment{width: 50%;height:50%;}
 
@@ -73,8 +112,13 @@ br {
     margin:4%;
  }
 
-#smallest {
 
-
+ .hidden {
+    display: none;
 }
-html5
+
+.visible {
+    display: block;
+}
+
+
