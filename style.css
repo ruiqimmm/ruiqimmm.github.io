@@ -10,20 +10,27 @@ body{
     max-width: 100%;
 }
 
+body:hover {
+    transform: scale(1.5);
+    width: 40%;
+    transition: 30s all ease-in-out;
+
+}
+
 a {
     color:slategrey;
-     color:rgb(255, 255, 255);
-    background-color:rgba(212,212,212,0.7);
   }
   
-  a:hover {
+a:hover {
+    width: 100%;
+    transition: 15s all ease-in-out;
     color:slategrey;
     background-color: rgba(138, 255, 226, 0.700);
   }
   
   /* selected link */
   a:active {
-    color:rgb(255, 255, 255);
+    color:rgb(185, 185, 185);
   }
 
 
@@ -105,7 +112,6 @@ img:hover{cursor: zoom-in;
 }
 
 #comment{width: 50%;height:50%;}
-
 #name{width:50%;height:50%;}
 
 br {
