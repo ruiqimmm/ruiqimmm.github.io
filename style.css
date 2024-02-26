@@ -99,6 +99,8 @@ h2{
 img { width:30%;}
 img:hover{cursor: zoom-in;
     transform: scale(1.5);
+    width: 100%;
+    transition: 10s all ease-in-out;
     display:fixed;
 }
 
