@@ -245,13 +245,6 @@ br {
     margin: 3%;
 }
 
-.hidden {
-    display: none;
-}
-
-.visible {
-    display: block;
-}
 
 .space {
     display: inline-block;
@@ -275,15 +268,15 @@ br {
 }
 
 
-@media screen and (max-width:2000px) {
+@media screen and (max-width:1600px) {
     body{background-color: rgb(208, 250, 208);}
-    body.chat{background-color: rgb(207, 212, 212);}
+    body.chat{background-color: rgb(205, 205, 211);}
 
-@media screen and (max-width:1500px) {
-    body.chat{background-color: rgb(173, 196, 212);}
+@media screen and (max-width:1100px) {
+    body.chat{background-color: rgb(192, 207, 212);}
     body{ background-color: rgb(207, 250, 207);}
 
-@media screen and (max-width:800px) {
+@media screen and (max-width:600px) {
     body.chat{background-color: rgb(200, 205, 212);}
     body{ background-color: rgb(192, 250, 192);}
     
