@@ -1,37 +1,58 @@
-function fnsubmit() {
-    var nameInput = document.getElementById("name");
-    var commentInput = document.getElementById("comment");
-    var commentsContainer = document.getElementById("comments-container");
+<script>
+    window.onload = function () {
+        const messageDisplay = document.getElementById('message-display');
+        const messages = JSON.parse(localStorage.getItem('messages')) || [];
+        messages.forEach(message => {
+            addMessageToDisplay(message);
+        });
 
-    // Create new elements for the comment and time
-    var commentDiv = document.createElement("div");
-    var nameParagraph = document.createElement("p");
-    var commentParagraph = document.createElement("p");
-    var timeParagraph = document.createElement("p");
+        document.getElementById('message-form').addEventListener('submit', function (e) {
+            e.preventDefault();
 
-    // Set text content for name, comment, and time paragraphs
-    nameParagraph.textContent = "name: " + nameInput.value;
-    commentParagraph.textContent = "comment: " + commentInput.value;
+            const name = document.getElementById('name-input').value.trim();
+            const gender = document.getElementById('gender-input').value;
+            const contact = document.getElementById('contact-input').value.trim();
+            const messageText = document.getElementById('message-input').value.trim();
 
-    // Get the current time
-    var currentTime = new Date();
-    var hours = currentTime.getHours();
-    var minutes = currentTime.getMinutes();
-    var seconds = currentTime.getSeconds();
+            if (name && gender && contact && messageText) {
+                const message = {
+                    name,
+                    gender,
+                    contact,
+                    message: messageText
+                };
 
-    // Format the time as HH:MM:SS
-    var timeString = ("0" + hours).slice(-2) + ":" + ("0" + minutes).slice(-2) + ":" + ("0" + seconds).slice(-2);
-    timeParagraph.textContent = "" + timeString;
+                messages.push(message);
+                localStorage.setItem('messages', JSON.stringify(messages));
 
-    // Append name, comment, and time paragraphs to the comment container
-    commentDiv.appendChild(timeParagraph);
-    commentDiv.appendChild(nameParagraph);  
-    commentDiv.appendChild(commentParagraph);
-   
-    // Append the comment container to the comments container
-    commentsContainer.appendChild(commentDiv);
+                clearFormInputs();
+                addMessageToDisplay(message);
+            }
+        });
 
-    // Clear input fields after submission
-    nameInput.value = "";
-    commentInput.value = "";
-}
+        function addMessageToDisplay(message) {
+            const messageItem = document.createElement('div');
+            messageItem.className = 'message-item';
+
+            const nameLabel = document.createElement('span');
+            nameLabel.textContent = '姓名：' + message.name;
+            messageItem.appendChild(nameLabel);
+
+            const contactLabel = document.createElement('span');
+            contactLabel.textContent = '联系方式：' + message.contact;
+            messageItem.appendChild(contactLabel);
+
+            const messageText = document.createElement('p');
+            messageText.textContent = '留言：' + message.message;
+            messageItem.appendChild(messageText);
+
+            messageDisplay.appendChild(messageItem);
+        }
+
+        function clearFormInputs() {
+            document.getElementById('name-input').value = '';
+            document.getElementById('contact-input').value = '';
+            document.getElementById('message-input').value = '';
+        }
+    };
+</script>

@@ -6,12 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href = "/style.css" rel="stylesheet">
 </head>
-<body>
-    <body style="background-color:#d4d4d4;">
+<body class="chat"><br>
     12:30 01:45
     <br> <a class="i" href="11.16.html">I</a> bought souvenior coin
-    <br>
-    <br>
+    <br>  <div class="space"></div>
     <br><a href="./index.html"> restart </a>
     <br><a id="randomLink" href="#">random</a>
     <div id="randomContent"></div>
@@ -60,6 +58,24 @@
         document.getElementById("randomLink").setAttribute("href", getRandomPage());
     </script>
     <br><a href="12.28.html"> next day </a>
-        
+    <br>  <div class="space"></div>
+    <script>
+        // 获取超链接和图案元素
+        var patternLink = document.getElementById("patternLink");
+        var pattern = document.getElementById("pattern");
+
+        // 添加点击事件监听器
+        patternLink.addEventListener("click", function(event) {
+            event.preventDefault(); // 防止默认链接行为
+
+            // 显示图案
+            pattern.classList.remove("hidden");
+
+            // 导航到下一个页面
+            setTimeout(function() {
+                window.location.href = "next-page.html"; // 替换为您想要导航到的下一个页面的 URL
+            }, 1000); // 在显示图案后延迟1秒钟再导航到下一个页面
+        });
+    </script> 
 </body>
 </html>

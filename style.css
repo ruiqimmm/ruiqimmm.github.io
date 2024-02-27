@@ -1,127 +1,251 @@
+  
+html{
+    font-size:4px;
 
-body{
-    padding-left:10%;
-    padding-right:10%;
+}
+
+body {
+    padding-left: 10%;
+    padding-right: 10%;
     padding-top: 5%;
-    color:slategrey;
-    background-color:honeydew;
+    color: slategrey;
+    background-color: honeydew;
     /*font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;*/
-    font-size: 100%;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+    font-size: 4rem;
     max-width: 100%;
+    transform: scale(1);
+    transition: 10s all ease-in-out;
+}
+
+body.chat{ 
+    background-color:#d4d4d4;
 }
 
 body:hover {
     transform: scale(1.5);
-    width: 40%;
-    transition: 30s all ease-in-out;
-
+    transition: 25s all ease-in-out;
+    max-width:100%;
 }
 
 a {
-    color:slategrey;
-  }
-  
+    color: slategrey;
+    text-decoration: none;
+    border-bottom: 3px dotted slategrey;
+}
+
 a:hover {
-    width: 100%;
-    transition: 15s all ease-in-out;
-    color:slategrey;
+    color: slategrey;
     background-color: rgba(138, 255, 226, 0.700);
-  }
-  
-  /* selected link */
-  a:active {
-    color:rgb(185, 185, 185);
-  }
+    
+}
 
+h2 {
+    font-size:5rem;
+    font-weight: 400;
+}
 
-h2{
-    font-weight:400;
+a.maybe:hover {
+    color: rgb(255, 183, 183);
+    background-color: rgb(255, 183, 183);
+}
+.maybe{
+    background-color: rgb(255, 183, 183);
+    color: rgb(66, 66, 66);
+}
+
+a.like{
+    background-color: rgb(252, 137, 137);
+    color: rgb(66, 66, 66);
+}
+
+a.like:hover{
+    color: rgb(252, 137, 137);
+    background-color: rgb(252, 137, 137);
+}
+
+a.i:hover {
+    background-color: rgb(246, 248, 151);
+    color: rgb(252, 255, 49);
+}
+
+a.i{
+    background-color: rgb(252, 255, 49);
+    color: rgb(66, 66, 66);
 
 }
 
-#like:hover{
-    background-color:rgb(241, 110, 154);
+a.my:hover {
+    color: rgb(168, 158, 145);
+    background-color: rgb(170, 150, 123);
 }
 
-#maybe:hover{
-    background-color:rgb(255, 183, 183);
-}
-
-#i:hover{
-    background-color:rgb(252, 255, 49);
-}
-
-#my:hover{
-    background-color:rgb(170, 150, 123);
-}
-
-#should:hover{
-    background-color:rgb(83, 142, 253);
-}
-#is:hover{
-    background-color:rgb(247, 151, 231);
-}
-#favouritecomic:hover{
-    background-color:rgb(144, 125, 211);
-}
-#day:hover{
-    background-color:rgb(144, 125, 211);
-}
-
-#a:hover{
-    background-color:rgb(144, 125, 211);
-}
-#it:hover{
-    background-color:rgb(144, 125, 211);
-}
-#do:hover{
-    background-color:rgb(144, 125, 211);
-}
-#had:hover{
-    background-color:rgb(144, 125, 211);
-}
-#time:hover{
-    background-color:rgb(144, 125, 211);
+a.my {
+    background-color: rgb(170, 150, 123);
+    color: rgb(66, 66, 66);
 }
 
 
+a.should:hover {
+    background-color: rgb(124, 170, 255);
+    color: rgb(170, 199, 252);
+}
+
+a.should{
+    background-color: rgb(170, 199, 252);
+    color: rgb(66, 66, 66);
+}
+
+a.is:hover {
+    background-color: rgb(247, 151, 231);
+    color: rgb(247, 151, 231);
+}
+
+a.is{
+    background-color: rgb(247, 151, 231);
+    color: rgb(66, 66, 66);
+}
+
+a.comic:hover {
+    background-color: rgb(173, 163, 211);
+    color: rgb(144, 125, 211);
+}
+
+a.comic{
+    background-color: rgb(144, 125, 211);
+    color: rgb(66, 66, 66);
+}
+
+a.day:hover {
+    background-color: rgb(135, 184, 130);
+    color: rgb(135, 184, 130);
+}
+
+a.day{
+    background-color: rgb(102, 182, 95);
+    color: rgb(66, 66, 66);
+}
+
+a.cake:hover {
+    background-color: rgb(255, 202, 29);
+    color: rgb(255, 202, 29);
+}
+
+a.cake{
+    background-color: rgb(255, 202, 29);
+    color: rgb(66, 66, 66);
+}
 
 
+a.this:hover {
+    background-color: rgb(24, 255, 186);
+    color: rgb(24, 255, 186);
+}
 
+a.this{
+    background-color: rgb(24, 255, 186);
+    color: rgb(66, 66, 66);
+}
+
+
+a.a:hover {
+    background-color: rgb(255, 173, 66);
+    color: rgb(255, 173, 66);
+}
+
+a.a{
+    background-color: rgb(255, 173, 66);
+    color: rgb(66, 66, 66);
+}
+
+a.it:hover {
+    background-color: rgb(180, 255, 214);
+    color: rgb(180, 255, 214);
+}
+
+a.it{
+    background-color: rgb(180, 255, 214);
+    color: rgb(66, 66, 66);
+}
+
+a.do:hover {
+    background-color:rgb(193, 194, 255);
+    color: rgb(193, 194, 255);
+}
+
+a.do{
+    background-color: rgb(193, 194, 255);
+    color: rgb(66, 66, 66);
+}
+
+a.have:hover {
+    background-color: rgb(75, 255, 90);
+    color: rgb(75, 255, 90);
+}
+
+a.have{
+    background-color: rgb(75, 255, 90);
+    color: rgb(66, 66, 66);
+}
+
+a.time:hover {
+    color: rgb(113, 238, 255);
+    background-color: rgb(113, 238, 255);
+}
+
+a.time{
+    color: rgb(66, 66, 66);
+    background-color: rgb(113, 238, 255);
+}
 
 #btn {
-    width: 10%; 
-    height: 10%;
-    font-size: 200%;
+    width: 6%;
+    height: 3%;
+    font-size: 120%;
     text-align: justified;
+    color:slategray;
 }
+
 #btn:hover {
     color: rgb(73, 146, 58);
-    width:12%;
-    height: 12%;
-
+    width: 12%;
+    height: 6%;
 }
 
+img {
+    width: 30%;
+    max-width:100%;
+    transition: 20s all ease-in-out;
+    display: inline-block;
+    cursor: zoom-in;
+}
 
-img { width:30%;}
-img:hover{cursor: zoom-in;
+img:hover {
+    cursor: zoom-in;
     transform: scale(1.5);
-    width: 100%;
-    transition: 10s all ease-in-out;
-    display:fixed;
+    width: 50%;
+    transition: 20s all ease-in-out;
+    display: inline-block;
 }
 
-#comment{width: 50%;height:50%;}
-#name{width:50%;height:50%;}
+#comment {
+    width: 50%;
+    height: 50%;
+}
+
+#name {
+    width: 50%;
+    height: 50%;
+}
 
 br {
     display: block;
     content: "";
-    margin:4%;
- }
+    margin: 3%;
+}
 
-
- .hidden {
+.hidden {
     display: none;
 }
 
@@ -129,4 +253,46 @@ br {
     display: block;
 }
 
+.space {
+    display: inline-block;
+    position: relative;
+    background-color: rgb(87, 42, 42);
+    width: 100px;
+    height: 200px;
+    visibility: hidden;
+}
 
+.smallspace {
+    display: inline-block;
+    position: relative;
+}
+
+.extrasmallspace{
+    display: inline-block;
+    position: relative;
+    width: 5rem;
+    height:1rem;
+}
+
+.pattern{
+    width: 50rem;
+    height:50rem;
+    color:red;
+    display: none;
+}
+
+@media screen and (max-width:2000px) {
+    body{background-color: rgb(208, 250, 208);}
+    body.chat{background-color: rgb(207, 212, 212);}
+
+@media screen and (max-width:1500px) {
+    body.chat{background-color: rgb(173, 196, 212);}
+    body{ background-color: rgb(207, 250, 207);}
+
+@media screen and (max-width:800px) {
+    body.chat{background-color: rgb(200, 205, 212);}
+    body{ background-color: rgb(192, 250, 192);}
+    
+
+
+    

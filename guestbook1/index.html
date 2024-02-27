@@ -4,45 +4,87 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href = "/style.css" rel="stylesheet">
-
+    <title>message</title>
+    <link href="/style.css" rel="stylesheet">
 </head>
 <body>
-    <div id="parent">
-    <h2>guestbook</h2><br>
-    <br><div id="comments-container"></div>
-    <box><br>......<box>
-    <br>
-    name:<br> <input type="text" id="name"><br/>
-    comment: <br><input type="text" id="comment"><br/>
-    <input id="btn" type="button" onclick="fnsubmit()" value="send"/>
-    </div>
-    <br/>
+    <h2 style="display: inline-block; background-color: white;">message ∮</h2><br>
+
     
-    <a href="/index.html"> home </a>
-    <br><script src="script.js"></script>
+    this is a message box for you and only you can see
+    <br>message will shown below if you sent one.<br>
+    <div class="smallspace"></div>
+    <div class="box">
+        <form id="message-form">
+            <div id="message-display" class="message-container"></div>
+            <div class="space"></div>
+           
+            <div>
+                <label for="message-input">message:</label>
+                <textarea id="message-input" placeholder="..."></textarea>
+                <br><button id="btn" type="submit" class="box_button">send</button>
+            </div>
+        </form>
+    </div>
 
     <script>
-        function saveData() {
-            var inputValue = document.getElementById("data").value;
-            localStorage.setItem("savedData", inputValue);
-            alert("Data saved to local storage!");
-        }
+        window.onload = function () {
+            const messageDisplay = document.getElementById('message-display');
+            const messages = JSON.parse(localStorage.getItem('messages')) || [];
+            messages.forEach(message => {
+                addMessageToDisplay(message);
+            });
 
-        function loadData() {
-            var savedData = localStorage.getItem("savedData");
-            if (savedData) {
-                alert("Data loaded from local storage: " + savedData);
-            } else {
-                alert("No data found in local storage.");
+            document.getElementById('message-form').addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                const messageText = document.getElementById('message-input').value.trim();
+                const timestamp = formatTimestamp(new Date()); 
+
+                if (messageText) {
+                    const message = {
+                        message: messageText,
+                        timestamp: timestamp 
+                    };
+
+                    messages.push(message);
+                    localStorage.setItem('messages', JSON.stringify(messages));
+
+                    clearFormInputs();
+                    addMessageToDisplay(message);
+                }
+            });
+
+            function formatTimestamp(date) {
+                const month = date.getMonth() + 1;
+                const day = date.getDate();
+                const hours = date.getHours();
+                const minutes = date.getMinutes();
+                return `${month}.${day} ${hours}:${minutes < 10 ? '0' : ''}${minutes}`;
             }
-        }
+
+            function addMessageToDisplay(message) {
+                const messageItem = document.createElement('div');
+                messageItem.className = 'message-item';
+
+                const timestampLabel = document.createElement('span');
+                timestampLabel.textContent = '' + message.timestamp; 
+                messageItem.appendChild(timestampLabel);
+
+                const messageText = document.createElement('p');
+                messageText.textContent = '' + message.message;
+                messageItem.appendChild(messageText);
+
+                messageDisplay.appendChild(messageItem);
+            }
+
+            function clearFormInputs() {
+                document.getElementById('message-input').value = '';
+            }
+        };
     </script>
-
-    <input type="text" id="data" placeholder="Enter data...">
-    <button onclick="saveData()">Save Data</button>
-    <button onclick="loadData()">Load Data</button>
-
+    <div class="smallspace"></div><br>
+    <a href="/index.html">home ☂ </a><br>
+    <div class="space"></div><br>
 </body>
 </html>

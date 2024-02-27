@@ -6,14 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href = "/style.css" rel="stylesheet">
 </head>
-<body>
-    <body style="background-color:#d4d4d4;">
+    <body class="chat">   <br>
     12.28 22:23
-    <br> translating <a class="my" href="10.29.html">my</a> favourite comic
-    <br>
-    <br>
+    <br> translating <a class="my" href="10.29.html">my</a> <a class="comic" href="11.11.html">favourite comic</a>
+    <br>  <div class="space"></div>
     <br><a href="./index.html"> restart </a>
     <br><a id="randomLink" href="#">random</a>
+    <div id="randomContent"></div>
     <div id="randomContent"></div>
     <script>
         function getRandomPage() {
@@ -56,11 +55,10 @@
 
             return pages[randomIndex];
         }
-        <div id="fixedElement" class="hidden">
-            <div class="line"></div>
-        </div>
+
         document.getElementById("randomLink").setAttribute("href", getRandomPage());
     </script>
+
     <br><a href="12.10.html"> next day </a>
         
 </body>
