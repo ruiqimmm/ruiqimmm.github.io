@@ -274,12 +274,6 @@ br {
     height:1rem;
 }
 
-.pattern{
-    width: 50rem;
-    height:50rem;
-    color:red;
-    display: none;
-}
 
 @media screen and (max-width:2000px) {
     body{background-color: rgb(208, 250, 208);}
