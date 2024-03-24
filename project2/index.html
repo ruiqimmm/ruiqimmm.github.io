@@ -1,34 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🎵</title>
-    <link href = "style.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
     <script src="script.js"></script>
+    <title>🎵</title>
 </head>
+
 <body>
-    
-<div class="container">
 
-<div id="clock"></div>
+    <audio id="audio1" src="wav/1.wav" preload="auto"></audio>
+    <audio id="audio2" src="wav/2.wav" preload="auto"></audio>
 
-<br>
+    <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="1" onchange="adjustVolume()">
+   
+    <div class="container">
+        <!-- 时间 -->
+        <div id="clock"></div>
 
-<button class="btn" id="one"> 1 </button>
-<button class="btn" id="audio"> 2 </button>
-<button class="btn"> 3 </button>
-<button class="btn"> 4 </button>
-<button class="btn"> 5 </button>
-<button class="btn"> 6 </button>
-
-<audio id="audioOne">
-    <source src="../wav/1.wav" type="audio/wav">
-</audio>
-
-
-</div>
+        <!-- 按钮1 -->
+        <button onclick="playMusic('audioOne')">1</button>
+        <!-- 按钮2 -->
+        <button onclick="playMusic('audioTwo')">2</button>
+        <!-- 按钮3 -->
+        <button onclick="playMusic('audioThree')">3</button>
+        <!-- 按钮4 -->
+        <button onclick="playMusic('audioFour')">4</button>
+        <!-- 按钮5 -->
+        <button onclick="playMusic('audioFive')">5</button>
+        <!-- 按钮6 -->
+        <button onclick="playMusic('audioSix')">6</button>
+    </div>
+    <br>
+    <audio controls loop>
+        <source src="wav/fridge.WAV" type="audio/wav">
+    </audio>
+    <br>
+    <audio controls loop>
+        <source src="wav/fridge.WAV" type="audio/wav">
+    </audio> <br>
+    <audio controls loop>
+        <source src="wav/fridge.WAV" type="audio/wav">
+    </audio> <br>
+    <audio controls loop>
+        <source src="wav/fridge.WAV" type="audio/wav">
+    </audio>
 
 </body>
+
 </html>

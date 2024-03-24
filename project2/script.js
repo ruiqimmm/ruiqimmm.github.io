@@ -26,10 +26,18 @@ setInterval(updateClock, 1000);
 // Initial call to display the clock immediately
 updateClock();
 
-//btn1
-var buttonOne = document.getElementById("one");
-var audioOne = document.getElementById("audioOne");
+var preloadAudio = new Audio('1.wav');
+preloadAudio.play();
+preloadAudio.pause();
 
-buttonOne.addEventListener("click", function() {
-    audioOne.play();
-});
+function playMusic(audioId) {
+    var audio = document.getElementById(audioId);
+    audio.playbackRate = 2;
+    audio.play();
+}
+
+function adjustVolume() {
+    var volume = document.getElementById("volumeSlider").value;
+    var audioElements = document.getElementsByTagName("audio");
+    for (var i = 0; i < audioElements.length; i++) {
+        audioElements[i].volume = volume;

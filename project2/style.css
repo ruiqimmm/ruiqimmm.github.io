@@ -2,8 +2,8 @@ body {
     padding-left: 10%;
     padding-right: 10%;
     padding-top: 5%;
-    background-color: beige;
-    color: #707274;
+    background-color: rgb(68, 107, 112);
+    color: #f8f8f8;
     font-size: 20px;
 }
 
@@ -12,22 +12,26 @@ body {
     margin-top: 20px;
 }
 
-.btn {
+button {
     padding: 2%;
     width: 10%;
     height: 10%;
     font-size: 20px;
     border: none;
-    border-radius: 5px;
-    margin: 5%;
+    margin: 1%;
     background-color: #c5c9cc;
     color: #fff;
     cursor: pointer;
 }
-.btn:hover {
+
+button:hover {
     background-color: #b5d9ff;
+
+button:active {
+    transition: background-color 2s ease;
+    background-color: #b5d5ff;
+
 }
 
 .one{}
-.audioOne{
-}
+.audioOne{}
