@@ -1,0 +1,33 @@
+body {
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 5%;
+    background-color: beige;
+    color: #707274;
+    font-size: 20px;
+}
+
+.clock {
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 2%;
+    width: 10%;
+    height: 10%;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    margin: 5%;
+    background-color: #c5c9cc;
+    color: #fff;
+    cursor: pointer;
+}
+.btn:hover {
+    background-color: #b5d9ff;
+}
+
+.one{}
+.audioOne{
+}
