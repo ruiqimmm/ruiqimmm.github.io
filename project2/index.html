@@ -11,57 +11,111 @@
 
 <body>
 
-    <audio id="audio1" src="wav/1.wav" preload="auto"></audio>
-    <audio id="audio2" src="wav/2.wav" preload="auto"></audio>
-    <div class="container">
+    <div id="clock"></div></div>
+    <br>
+    <div class="audiocon container">
         <!-- 时间 -->
-        <div id="clock"></div>
-    <br>
-    <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="1" onchange="adjustVolume()">
-    <audio controls loop>
-        <source src="wav/fridge.WAV" type="audio/wav">
-    </audio>
-    <audio controls loop>
-        <source src="wav/fridge.WAV" type="audio/wav">
-    </audio> 
-    <audio controls loop>
-        <source src="wav/fridge.WAV" type="audio/wav">
-    </audio> 
-    <audio controls loop>
-        <source src="wav/fridge.WAV" type="audio/wav">
-    </audio><br>
+        
+        <audio controls loop>
+            <source src="wav/fridge.WAV" type="audio/wav">
+        </audio>
+        <audio controls loop>
+            <source src="wav/fridge.WAV" type="audio/wav">
+        </audio>
+        <audio controls loop>
+            <source src="wav/fridge.WAV" type="audio/wav">
+        </audio>
+        <audio controls loop>
+            <source src="wav/fridge.WAV" type="audio/wav">
+        </audio> </div>
+        <br>
+        
+        <div class="btncon container">
+            <!-- 按钮 -->
+            <button onclick="playMusic('audio0')"> on/off </button>
+            <audio id="audio2" src="wav/0.WAV" preload="auto"></audio>
 
+            <button onclick="playMusic('audio1')"> + </button>
+            <audio id="audio1" src="wav/1.wav" preload="auto"></audio>
+    
+            <button onclick="playMusic('audio2')"> - </button>
+            <audio id="audio2" src="wav/2.wav" preload="auto"></audio>
+    
+            <button onclick="playMusic('audio2')"> ~ </button>
+            <audio id="audio2" src="wav/fridge.WAV" preload="auto"></audio>
+    
+            <button onclick="playMusic('audio2')"> 0 </button>
+            <audio id="audio2" src="wav/fridge.WAV" preload="auto"></audio>
+    
+            <button onclick="playMusic('audio2')"> ☽ </button>
+            <audio id="audio2" src="wav/fridge.WAV" preload="auto"></audio>
+    
+            <button onclick="playMusic('audio2')"> ☼ </button>
+            <audio id="audio2" src="wav/fridge.WAV" preload="auto"></audio>
 
-  
-        <!-- 按钮1 -->
-        <button onclick="playMusic('audioOne')">1</button>
-        <!-- 按钮2 -->
-        <button onclick="playMusic('audioTwo')">2</button>
-        <!-- 按钮3 -->
-        <button onclick="playMusic('audioThree')">3</button>
-        <!-- 按钮4 -->
-        <button onclick="playMusic('audioFour')">4</button>
-        <!-- 按钮5 -->
-        <button onclick="playMusic('audioFive')">5</button>
-        <!-- 按钮6 -->
-        <button onclick="playMusic('audioSix')">6</button>
-    </div>
-    <br>
-  
+            <button onclick="playMusic('audio2')"> ☼ </button>
+            <audio id="audio2" src="wav/fridge.WAV" preload="auto"></audio>
 
-    <br>
-    <img id="aircon2" src="../img/aircon2.jpeg">
-    <img id="aircon" src="../img/aircon.jpeg">
-    <img id="air" src="../img/air.jpeg">
-    <img id="alarm" src="../img/alarm.jpeg">
-    <img id="alarm2" src="../img/alarm2.jpeg">
-    <img id="heat" src="../img/heat.jpeg">
-    <img id="humi" src="../img/humi.webp">
-    <img id="microwave" src="../img/microwave.jpeg">
-    <img id="sound" src="../img/sound.jpeg">
-    <img id="fridge" src="../img/fridge.png">
+        </div>
     
 
+         <script>
+         function playMusic(musicId) {
+            var audio = document.getElementById(musicId);
+                if (audio) {
+                 audio.play();
+                  } else {
+        console.log("Error: Audio element not found with ID " + musicId);
+          }
+}
+
+        </script>
+     
+    <br>
+    <br>
+    <img id="aircon2" src="../img/aircon2.jpeg" onclick="playMusic('audioAircon')">
+    <button id="none" onclick="playMusic('audioAircon')"></button>
+    <audio id="audioAircon" src="wav/adjustaircon.WAV" preload="auto"></audio>
+
+    <img id="aircon" src="../img/aircon.jpeg"onclick="playMusic('micro')">
+    <button id="none" onclick="playMusic('micro')"></button>
+    <audio id="micro" src="wav/micro2.WAV" preload="auto"></audio>
+
+    <img id="air" src="../img/air.jpeg" onclick="playMusic('micro')">
+    <button id="none" onclick="playMusic('micro')"></button>
+    <audio id="micro" src="wav/micro.WAV" preload="auto"></audio>
+
+    <img id="alarm" src="../img/alarm.jpeg"onclick="playMusic('heavy')">
+    <button id="none" onclick="playMusic('micro')"></button>
+    <audio id="heavy" src="wav/heavyair.WAV" preload="auto"></audio>
+
+    <img id="alarm2" src="../img/alarm2.jpeg" onclick="playMusic('micro')">
+    <button id="none" onclick="playMusic('micro')"></button>
+    <audio id="micro" src="wav/random2.WAV" preload="auto"></audio>
+
+    <img id="heat" src="../img/heat.jpeg" onclick="playMusic('micro')">
+    <button id="none" onclick="playMusic('micro')"></button>
+    <audio id="micro" src="wav/micro.WAV" preload="auto"></audio>
+
+    <img id="humi" src="../img/humi.webp" onclick="playMusic('micro')">
+    <button id="none" onclick="playMusic('micro')"></button>
+    <audio id="micro" src="wav/micro.WAV" preload="auto"></audio>
+
+    <img id="microwave" src="../img/microwave.jpeg" onclick="playMusic('micro')">
+    <button id="none" onclick="playMusic('micro')"></button>
+    <audio id="micro" src="wav/micro1.WAV" preload="auto"></audio>
+
+    <img id="sound" src="../img/sound.jpeg"onclick="playMusic('micro')">
+    <button id="none" onclick="playMusic('micro')"></button>
+    <audio id="micro" src="wav/random.WAV" preload="auto"></audio>
+
+    <img id="sound" src="../img/sound.jpeg"onclick="playMusic('micro')">
+    <button id="none" onclick="playMusic('micro')"></button>
+    <audio id="micro" src="wav/ramdom2.WAV" preload="auto"></audio>
+
+    <img id="fridge" src="../img/fridge.png" onclick="playMusic('micro')">
+    <button id="none" onclick="playMusic('micro')"></button>
+    <audio id="micro" src="wav/fridge.WAV" preload="auto"></audio>
 
 </body>
 

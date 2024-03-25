@@ -2,23 +2,45 @@ body {
     padding-left: 5%;
     padding-right: 10%;
     padding-top: 5%;
-    background-color: rgb(68, 107, 112);
+    background-color: rgba(68, 107, 112, 0.397);
     color: #f8f8f8;
-    font-size: 20px;
+    font-size: 30px;
 }
 
-.clock {
-    font-size: 24px;
-    margin-top: 20px;
+#clock {
+    display:block;
+    background-color:rgb(121, 121, 121);
+    font-size:30px;
+    width: 20%;
+    height: 40%;
+    text-align:center;
+
 }
+
+.audiocon { display:block;
+    background-color:rgb(121, 121, 121);
+    font-size:10px;
+    width: auto;
+    height: 10%;
+    text-align: left;
+    padding:1%;}
+
+
+#audioplay {
+    display:block;
+    background-color:rgb(121, 121, 121);
+    width: 20%;
+    height: 40%;
+    text-align:center;}
 
 button {
     padding: 1%;
-    width: 5%;
+    width: 10%;
     height: 2%;
     font-size: 20px;
     border: none;
     margin: 1%;
+    border-radius: 50%;
     background-color: #c5c9cc;
     color: #fff;
     cursor: pointer;
@@ -33,7 +55,18 @@ button:active {
     background-color: #b5d5ff;
 }
 
-@media screen and (max-width: 3000px) {
+.btncon{
+    text-align:end;
+    text-align:left;
+    width:auto;
+    height:auto;
+}
+img {
+    width: 50%;
+    height: auto; 
+}
+
+@media screen and (max-width: 3000px) and (min-width: 2500px) {
     #aircon,
     #air,
     #alarm,
@@ -45,9 +78,12 @@ button:active {
     #fridge {
         display: none;
     }
+    #aircon2 {
+        display: block;
+    }
 }
 
-@media screen and (max-width: 2500px) {
+@media screen and (max-width: 2500px) and (min-width: 2000px) {
     #aircon2,
     #air,
     #alarm,
@@ -59,9 +95,12 @@ button:active {
     #fridge {
         display: none;
     }
+    #air {
+        display: block;
+    }
 }
 
-@media screen and (max-width: 2000px) {
+@media screen  and (max-width: 2000px) and (min-width: 1700px) {
     #aircon2,
     #aircon,
     #alarm,
@@ -73,9 +112,12 @@ button:active {
     #fridge {
         display: none;
     }
+    #alarm {
+        display: block;
+    }
 }
 
-@media screen and (max-width: 1700px) {
+@media screen and (max-width: 1700px) and (min-width: 1400px) {
     #aircon2,
     #aircon,
     #air,
@@ -87,9 +129,12 @@ button:active {
     #fridge {
         display: none;
     }
+    #alarm2 {
+        display: block;
+    }
 }
 
-@media screen and (max-width: 1400px) {
+@media screen and (max-width: 1400px) and (min-width: 1100px) {
     #aircon2,
     #aircon,
     #air,
@@ -101,9 +146,12 @@ button:active {
     #fridge {
         display: none;
     }
+    #heat {
+        display: block;
+    }
 }
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1100px) and (min-width: 900px) {
     #aircon2,
     #aircon,
     #air,
@@ -115,9 +163,12 @@ button:active {
     #fridge {
         display: none;
     }
+    #humi {
+        display: block;
+    }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 900px) and (min-width: 700px) {
     #aircon2,
     #aircon,
     #air,
@@ -129,9 +180,12 @@ button:active {
     #fridge {
         display: none;
     }
+    #microwave {
+        display: block;
+    }
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 700px) and (min-width: 500px) {
     #aircon2,
     #aircon,
     #air,
@@ -142,6 +196,9 @@ button:active {
     #microwave,
     #fridge {
         display: none;
+    }
+    #sound {
+        display: block;
     }
 }
 
@@ -154,8 +211,12 @@ button:active {
     #heat,
     #humi,
     #microwave,
-    #sound,
-    #fridge {
+    #sound, {
         display: none;
     }
+    #fridge {
+        display: block;
+    }
 }
+
+#none{display: none;}
