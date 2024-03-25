@@ -55,28 +55,24 @@ console.log("Initial volume: " + initialVolume);
   
   
 //
-function adjustPitch() {
+function calculatePitch() {
     var windowWidth = window.innerWidth;
-    var pitch = 1.0; // 默认音调为 1.0
+    var pitch = 1; // 默认音调为 1
 
-    // 在这里根据页面宽度调整音调
-    // 例如：页面较小 => 较低的音调
-    //      页面较大 => 较高的音调
-    if (windowWidth < 500) {
-        pitch = 0.8;
-    } else if (windowWidth > 800) {
-        pitch = 1.2;
-        
-        else if (windowWidth > 1000) {
-            pitch = 1.5;
-        
-            else if (windowWidth > 1500) {
-                pitch = 2;
+    if (windowWidth < 1000) {
+        pitch = 0.5; // 较小的页面设置较低的音调
+    } else if (windowWidth > 1500) {
+        pitch = 2; // 较大的页面设置较高的音调
     }
 
-    // 应用音调设置到所有音频元素
-    var audios = document.getElementsByTagName('audio');
-    for (var i = 0; i < audios.length; i++) {
-        audios[i].playbackRate = pitch;
-    }
+    return pitch;
+}
+
+// 获取计算后的音调
+var pitch = calculatePitch();
+
+// 应用音调设置到所有音频元素
+var audios = document.getElementsByTagName('audio');
+for (var i = 0; i < audios.length; i++) {
+    audios[i].playbackRate = pitch;
 }

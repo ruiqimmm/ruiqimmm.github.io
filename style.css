@@ -278,5 +278,4 @@ br {
 
 @media screen and (max-width:600px) {
     body.chat{background-color: rgb(200, 205, 212);}
-    body{ background-color: rgb(192, 250, 192);}
-    
+    body{ background-color: rgb(192, 250, 192);}}

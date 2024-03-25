@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="style.css" rel="stylesheet">
     <script src="script.js"></script>
     <title>🎵</title>
@@ -17,7 +17,7 @@
         <!-- 时间 -->
         
         <audio controls loop>
-            <source src="wav/fridge.WAV" type="audio/wav">
+            <source src="wav/test.WAV" type="audio/wav">
         </audio>
         <audio controls loop>
             <source src="wav/fridge.WAV" type="audio/wav">
@@ -33,7 +33,7 @@
         <div class="btncon container">
             <!-- 按钮 -->
             <button onclick="playMusic('audio0')"> on/off </button>
-            <audio id="audio2" src="wav/0.WAV" preload="auto"></audio>
+            <audio id="audio0" src="wav/mobility.WAV" preload="auto"></audio>
 
             <button onclick="playMusic('audio1')"> + </button>
             <audio id="audio1" src="wav/1.wav" preload="auto"></audio>
@@ -41,20 +41,20 @@
             <button onclick="playMusic('audio2')"> - </button>
             <audio id="audio2" src="wav/2.wav" preload="auto"></audio>
     
-            <button onclick="playMusic('audio2')"> ~ </button>
-            <audio id="audio2" src="wav/fridge.WAV" preload="auto"></audio>
+            <button onclick="playMusic('boin')"> ~ </button>
+            <audio id="boin" src="wav/boin.WAV" preload="auto"></audio>
     
-            <button onclick="playMusic('audio2')"> 0 </button>
-            <audio id="audio2" src="wav/fridge.WAV" preload="auto"></audio>
+            <button onclick="playMusic('idk')"> 0 </button>
+            <audio id="idk" src="wav/idk.WAV" preload="auto"></audio>
     
-            <button onclick="playMusic('audio2')"> ☽ </button>
-            <audio id="audio2" src="wav/fridge.WAV" preload="auto"></audio>
+            <button onclick="playMusic('dudu')"> ☽ </button>
+            <audio id="dudu" src="wav/dudu.WAV" preload="auto"></audio>
     
-            <button onclick="playMusic('audio2')"> ☼ </button>
-            <audio id="audio2" src="wav/fridge.WAV" preload="auto"></audio>
+            <button onclick="playMusic('sun')"> ☼ </button>
+            <audio id="sun" src="wav/sun.WAV" preload="auto"></audio>
 
-            <button onclick="playMusic('audio2')"> ☼ </button>
-            <audio id="audio2" src="wav/fridge.WAV" preload="auto"></audio>
+            <button onclick="playMusic('zzz')"> ramdom </button>
+            <audio id="zzz" src="wav/zzz.WAV" preload="auto"></audio>
 
         </div>
     
@@ -73,6 +73,7 @@
      
     <br>
     <br>
+    <div class="image-container">
     <img id="aircon2" src="../img/aircon2.jpeg" onclick="playMusic('audioAircon')">
     <button id="none" onclick="playMusic('audioAircon')"></button>
     <audio id="audioAircon" src="wav/adjustaircon.WAV" preload="auto"></audio>
@@ -83,7 +84,7 @@
 
     <img id="air" src="../img/air.jpeg" onclick="playMusic('micro')">
     <button id="none" onclick="playMusic('micro')"></button>
-    <audio id="micro" src="wav/micro.WAV" preload="auto"></audio>
+    <audio id="micro" src="wav/micro0.WAV" preload="auto"></audio>
 
     <img id="alarm" src="../img/alarm.jpeg"onclick="playMusic('heavy')">
     <button id="none" onclick="playMusic('micro')"></button>
@@ -91,15 +92,15 @@
 
     <img id="alarm2" src="../img/alarm2.jpeg" onclick="playMusic('micro')">
     <button id="none" onclick="playMusic('micro')"></button>
-    <audio id="micro" src="wav/random2.WAV" preload="auto"></audio>
+    <audio id="micro" src="wav/alarm2.WAV" preload="auto"></audio>
 
-    <img id="heat" src="../img/heat.jpeg" onclick="playMusic('micro')">
+    <img id="heat" src="../img/heat.jpeg" onclick="playMusic('heat')">
     <button id="none" onclick="playMusic('micro')"></button>
-    <audio id="micro" src="wav/micro.WAV" preload="auto"></audio>
+    <audio id="heat" src="wav/heat.WAV" preload="auto"></audio>
 
-    <img id="humi" src="../img/humi.webp" onclick="playMusic('micro')">
+    <img id="humi" src="../img/humi.webp" onclick="playMusic('humi')">
     <button id="none" onclick="playMusic('micro')"></button>
-    <audio id="micro" src="wav/micro.WAV" preload="auto"></audio>
+    <audio id="humi" src="wav/humi.WAV" preload="auto"></audio>
 
     <img id="microwave" src="../img/microwave.jpeg" onclick="playMusic('micro')">
     <button id="none" onclick="playMusic('micro')"></button>
@@ -111,11 +112,12 @@
 
     <img id="sound" src="../img/sound.jpeg"onclick="playMusic('micro')">
     <button id="none" onclick="playMusic('micro')"></button>
-    <audio id="micro" src="wav/ramdom2.WAV" preload="auto"></audio>
+    <audio id="micro" src="wav/ririri.WAV" preload="auto"></audio>
 
     <img id="fridge" src="../img/fridge.png" onclick="playMusic('micro')">
     <button id="none" onclick="playMusic('micro')"></button>
     <audio id="micro" src="wav/fridge.WAV" preload="auto"></audio>
+    </div>
 
 </body>
 
