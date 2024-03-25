@@ -28,8 +28,10 @@ body {
     width: auto;
     height: 10%;
     text-align: left;
-    padding:1%;}
-
+    padding:1%; 
+    transform: scale(1);
+    transition: 2s all ease-in-out;}
+   
 
 #audioplay {
     display:block;
@@ -86,7 +88,7 @@ img {
 img:hover {
     cursor: zoom-in;
     width: 50%;
-    transform: scale(5);
+    transform: scale(2);
     transition: 2s all ease-in-out;
 }
 
