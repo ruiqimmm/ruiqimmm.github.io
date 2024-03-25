@@ -1,5 +1,5 @@
 body {
-    padding-left: 10%;
+    padding-left: 5%;
     padding-right: 10%;
     padding-top: 5%;
     background-color: rgb(68, 107, 112);
@@ -13,9 +13,9 @@ body {
 }
 
 button {
-    padding: 2%;
-    width: 10%;
-    height: 10%;
+    padding: 1%;
+    width: 5%;
+    height: 2%;
     font-size: 20px;
     border: none;
     margin: 1%;
@@ -26,12 +26,136 @@ button {
 
 button:hover {
     background-color: #b5d9ff;
+}
 
 button:active {
     transition: background-color 2s ease;
     background-color: #b5d5ff;
-
 }
 
-.one{}
-.audioOne{}
+@media screen and (max-width: 3000px) {
+    #aircon,
+    #air,
+    #alarm,
+    #alarm2,
+    #heat,
+    #humi,
+    #microwave,
+    #sound,
+    #fridge {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 2500px) {
+    #aircon2,
+    #air,
+    #alarm,
+    #alarm2,
+    #heat,
+    #humi,
+    #microwave,
+    #sound,
+    #fridge {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 2000px) {
+    #aircon2,
+    #aircon,
+    #alarm,
+    #alarm2,
+    #heat,
+    #humi,
+    #microwave,
+    #sound,
+    #fridge {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1700px) {
+    #aircon2,
+    #aircon,
+    #air,
+    #alarm2,
+    #heat,
+    #humi,
+    #microwave,
+    #sound,
+    #fridge {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    #aircon2,
+    #aircon,
+    #air,
+    #alarm,
+    #heat,
+    #humi,
+    #microwave,
+    #sound,
+    #fridge {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    #aircon2,
+    #aircon,
+    #air,
+    #alarm,
+    #alarm2,
+    #humi,
+    #microwave,
+    #sound,
+    #fridge {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    #aircon2,
+    #aircon,
+    #air,
+    #alarm,
+    #alarm2,
+    #heat,
+    #humi,
+    #sound,
+    #fridge {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    #aircon2,
+    #aircon,
+    #air,
+    #alarm,
+    #alarm2,
+    #heat,
+    #humi,
+    #microwave,
+    #fridge {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    #aircon2,
+    #aircon,
+    #air,
+    #alarm,
+    #alarm2,
+    #heat,
+    #humi,
+    #microwave,
+    #sound,
+    #fridge {
+        display: none;
+    }
+}

@@ -13,13 +13,26 @@
 
     <audio id="audio1" src="wav/1.wav" preload="auto"></audio>
     <audio id="audio2" src="wav/2.wav" preload="auto"></audio>
-
-    <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="1" onchange="adjustVolume()">
-   
     <div class="container">
         <!-- 时间 -->
         <div id="clock"></div>
+    <br>
+    <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="1" onchange="adjustVolume()">
+    <audio controls loop>
+        <source src="wav/fridge.WAV" type="audio/wav">
+    </audio>
+    <audio controls loop>
+        <source src="wav/fridge.WAV" type="audio/wav">
+    </audio> 
+    <audio controls loop>
+        <source src="wav/fridge.WAV" type="audio/wav">
+    </audio> 
+    <audio controls loop>
+        <source src="wav/fridge.WAV" type="audio/wav">
+    </audio><br>
 
+
+  
         <!-- 按钮1 -->
         <button onclick="playMusic('audioOne')">1</button>
         <!-- 按钮2 -->
@@ -34,19 +47,21 @@
         <button onclick="playMusic('audioSix')">6</button>
     </div>
     <br>
-    <audio controls loop>
-        <source src="wav/fridge.WAV" type="audio/wav">
-    </audio>
+  
+
     <br>
-    <audio controls loop>
-        <source src="wav/fridge.WAV" type="audio/wav">
-    </audio> <br>
-    <audio controls loop>
-        <source src="wav/fridge.WAV" type="audio/wav">
-    </audio> <br>
-    <audio controls loop>
-        <source src="wav/fridge.WAV" type="audio/wav">
-    </audio>
+    <img id="aircon2" src="../img/aircon2.jpeg">
+    <img id="aircon" src="../img/aircon.jpeg">
+    <img id="air" src="../img/air.jpeg">
+    <img id="alarm" src="../img/alarm.jpeg">
+    <img id="alarm2" src="../img/alarm2.jpeg">
+    <img id="heat" src="../img/heat.jpeg">
+    <img id="humi" src="../img/humi.webp">
+    <img id="microwave" src="../img/microwave.jpeg">
+    <img id="sound" src="../img/sound.jpeg">
+    <img id="fridge" src="../img/fridge.png">
+    
+
 
 </body>
 

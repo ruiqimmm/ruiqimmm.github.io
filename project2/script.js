@@ -1,5 +1,3 @@
-// script.js
-
 function updateClock() {
     var now = new Date();
     var years = now.getFullYear();
@@ -41,3 +39,5 @@ function adjustVolume() {
     var audioElements = document.getElementsByTagName("audio");
     for (var i = 0; i < audioElements.length; i++) {
         audioElements[i].volume = volume;
+    }
+}
