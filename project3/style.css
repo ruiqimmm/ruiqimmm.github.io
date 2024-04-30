@@ -1,0 +1,167 @@
+.calendar{
+width:auto;
+height:auto;
+display:flex;
+flex-wrap:wrap;
+}
+
+div{
+    align-items: center;
+    justify-content: center;
+
+}
+body {
+    font-size: 1vw;
+    letter-spacing: -0.03em;
+    transition: 0.3s;
+  }
+
+.containerweek{
+width:38vw;
+height:24vw;
+display:flex;
+flex-wrap:wrap;
+align-items:centered;}
+
+.week{
+    width:calc(35vw/7);
+    height:24vw; 
+    display:flex;
+    flex-direction:column;
+    border: solid rgb(103, 103, 103) 1px;
+}
+.hours {
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    border: solid rgb(103, 103, 103) 1px;
+    width: calc(35vw/7);
+    height:calc(24vw/24);
+    margin: auto;
+    align-items: left;
+}
+.minitues {
+    width:10vw;
+    height:10vw;
+    display:flex;
+    flex-wrap:wrap;
+    padding-bottom:4vw;
+}
+.min{
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    border: solid rgb(103, 103, 103) 1px;
+    width: calc(9vw/6);
+    height:calc(10vw/10);
+    margin: auto;
+    align-items: left;
+}
+
+.second {
+    width:5vw;
+    height:10vw;
+    display:flex;
+    flex-wrap:wrap;
+}
+.sec{
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    border: solid rgb(103, 103, 103) 1px;
+    width: calc(4vw/6);
+    height:calc(10vw/10);
+    margin: auto;
+}
+
+.half{
+    width:5vw;
+    height:10vw;
+    display:inline-block;
+}
+.day{
+    width:5vw;
+    height:calc(14vw/2);
+    border: solid rgb(103, 103, 103) 1px;
+    display:flex;
+}
+
+.bottom{
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+}
+
+.month{
+    width:38vw;
+    height:24vw;
+    display:flex;
+    flex-wrap:wrap;
+
+}
+
+.monthcontainer{
+    width:38vw;
+    height:calc(24vw/12);
+    display:flex;
+
+}
+
+.monthname{
+    width:calc(30vw/4);
+    height:calc(24vw/12);
+    border: solid rgb(103, 103, 103) 1px;
+    display:flex;
+}
+.monthnumber{
+    width:30vw;
+    height:calc(24vw/4);
+    border: solid rgb(103, 103, 103) 1px;
+    display:flex;
+}
+
+#seasons{
+    display:flex;
+    flex-wrap: wrap;
+}
+
+.fourss{
+    width:calc(30vw/4);
+    height:4vw;
+    border: solid rgb(0, 0, 0) 1px;
+}
+
+.monthday{
+    width:calc(28vw/4);
+    height:4vw;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:flex-start;
+
+    
+}
+
+.everymonth{
+    width:calc(38vw/4);
+    height:4vw;
+
+     display:flex;
+    flex-wrap:wrap;
+    border: solid rgb(103, 103, 103) 1px;
+}
+
+.dayinmonth{ 
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    border: solid rgb(103, 103, 103) 1px;
+    width: calc(4vw/6);
+    height:calc(6/4);
+    margin: auto;
+    align-items: left;}
+
+.blank{
+    width:auto;
+    height:4vw;
+   
+
+}
+
+    #dateHere{display:inline-block}
+    #timeHere{display:inline-block}
