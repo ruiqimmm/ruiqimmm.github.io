@@ -1,5 +1,6 @@
 function setup() {
     let cnv = createCanvas(100, 100);
+    cnv.parent("sound")
     cnv.mousePressed(playOscillator);
     osc = new p5.Oscillator(300);
     background(220);

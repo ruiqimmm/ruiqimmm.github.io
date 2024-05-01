@@ -1,167 +1,208 @@
-.calendar{
-width:auto;
-height:auto;
-display:flex;
-flex-wrap:wrap;
+body {
+    background-color: rgb(214, 214, 214);
 }
 
-div{
-    align-items: center;
-    justify-content: center;
-
+.calendar {
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
 }
+
+
 body {
     font-size: 1vw;
     letter-spacing: -0.03em;
     transition: 0.3s;
-  }
-
-.containerweek{
-width:38vw;
-height:24vw;
-display:flex;
-flex-wrap:wrap;
-align-items:centered;}
-
-.week{
-    width:calc(35vw/7);
-    height:24vw; 
-    display:flex;
-    flex-direction:column;
-    border: solid rgb(103, 103, 103) 1px;
 }
-.hours {
-    background-color: rgb(255, 255, 255);
+
+.containerweek {
+    width: 35vw;
+    height: 24vw;
     display: flex;
-    border: solid rgb(103, 103, 103) 1px;
+    flex-wrap: wrap;
+
+}
+
+.week {
     width: calc(35vw/7);
-    height:calc(24vw/24);
+    height: 24vw;
+    display: flex;
+    flex-direction: column;
+    align-items: centered;
+}
+
+.hours {
+    background-color: rgb(212, 212, 212);
+    display: flex;
+    width: calc(35vw/7);
+    height: calc(24vw/24);
     margin: auto;
     align-items: left;
 }
+
 .minitues {
-    width:10vw;
-    height:10vw;
-    display:flex;
-    flex-wrap:wrap;
-    padding-bottom:4vw;
-}
-.min{
-    background-color: rgb(255, 255, 255);
+    width: 10vw;
+    height: 10vw;
     display: flex;
-    border: solid rgb(103, 103, 103) 1px;
-    width: calc(9vw/6);
-    height:calc(10vw/10);
-    margin: auto;
-    align-items: left;
-}
-
-.second {
-    width:5vw;
-    height:10vw;
-    display:flex;
-    flex-wrap:wrap;
-}
-.sec{
-    background-color: rgb(255, 255, 255);
-    display: flex;
-    border: solid rgb(103, 103, 103) 1px;
-    width: calc(4vw/6);
-    height:calc(10vw/10);
-    margin: auto;
-}
-
-.half{
-    width:5vw;
-    height:10vw;
-    display:inline-block;
-}
-.day{
-    width:5vw;
-    height:calc(14vw/2);
-    border: solid rgb(103, 103, 103) 1px;
-    display:flex;
-}
-
-.bottom{
-    display:flex;
-    flex-direction:row;
-    flex-wrap:wrap;
-}
-
-.month{
-    width:38vw;
-    height:24vw;
-    display:flex;
-    flex-wrap:wrap;
-
-}
-
-.monthcontainer{
-    width:38vw;
-    height:calc(24vw/12);
-    display:flex;
-
-}
-
-.monthname{
-    width:calc(30vw/4);
-    height:calc(24vw/12);
-    border: solid rgb(103, 103, 103) 1px;
-    display:flex;
-}
-.monthnumber{
-    width:30vw;
-    height:calc(24vw/4);
-    border: solid rgb(103, 103, 103) 1px;
-    display:flex;
-}
-
-#seasons{
-    display:flex;
     flex-wrap: wrap;
 }
 
-.fourss{
-    width:calc(30vw/4);
-    height:4vw;
-    border: solid rgb(0, 0, 0) 1px;
-}
-
-.monthday{
-    width:calc(28vw/4);
-    height:4vw;
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:flex-start;
-
-    
-}
-
-.everymonth{
-    width:calc(38vw/4);
-    height:4vw;
-
-     display:flex;
-    flex-wrap:wrap;
-    border: solid rgb(103, 103, 103) 1px;
-}
-
-.dayinmonth{ 
+.min {
     background-color: rgb(255, 255, 255);
     display: flex;
-    border: solid rgb(103, 103, 103) 1px;
-    width: calc(4vw/6);
-    height:calc(6/4);
+    width: calc(10vw/6);
+    height: calc(10vw/10);
     margin: auto;
-    align-items: left;}
+    align-items: left;
+    gap: 2px;
+}
 
-.blank{
-    width:auto;
-    height:4vw;
-   
+.second {
+    width: 5vw;
+    height: 10vw;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.sec {
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    gap: 2px;
+    width: calc(4vw/6);
+    height: calc(10vw/10);
+    margin: auto;
+    align-items: left;
 
 }
 
-    #dateHere{display:inline-block}
-    #timeHere{display:inline-block}
+.half {
+    width: 5vw;
+    height: 10vw;
+    display: inline-block;
+}
+
+.day {
+    width: 5vw;
+    height: calc(10vw/2);
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    gap: 2px;
+
+
+}
+
+.bottom {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.month {
+    width: 30vw;
+    height: 24vw;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.monthcontainer {
+    width: 30vw;
+    height: calc(24vw/12);
+    display: flex;
+
+}
+
+.monthname {
+    width: calc(30vw/4);
+    height: calc(24vw/12);
+    background-color: rgba(255, 255, 255, 0.486);
+    display: flex;
+}
+
+.monthnumber {
+    width: 30vw;
+    height: calc(24vw/4);
+    display: flex;
+
+}
+
+#seasons {
+
+    display: flex;
+    flex-wrap: wrap;
+    background-color: white;
+    align-items: centered;
+}
+
+.fourss {
+    width: calc(30vw/4);
+    height: 2vw;
+    border: black;
+}
+
+.monthday {
+    width: calc(30vw/4);
+    height: 4vw;
+    gap: 2px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+
+}
+
+.everymonth {
+    width: calc(30vw/4);
+    height: 4vw;
+
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgba(255, 255, 255, 0.404);
+}
+
+.dayinmonth {
+    background-color: rgba(255, 255, 255, 0.173);
+    width: calc(30vw/4/8);
+    height: calc(4vw/6);
+    margin: auto;
+    text-align: center;
+}
+
+.blank {
+    width: auto;
+    height: 4vw;
+
+
+}
+
+.weekname {
+    width: calc(35vw/7);
+    height: 5vw;
+    align-items: center;
+    background-color: white;
+    gap: 2px;
+}
+
+.weekcontainer {
+    width: calc(35vw);
+    height: 5vw;
+    display: flex;
+    flex-direction: row;
+    border: solid rgb(255, 78, 78) 1px;
+}
+
+#dateHere {
+    display: inline-block
+}
+
+#timeHere {
+    display: inline-block
+}
+
+#sound {
+    position: fixed;
+    top: 0;
+    right: 0;
+    background: red;
+}
