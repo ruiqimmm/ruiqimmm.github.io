@@ -14,38 +14,95 @@ function updateTime() {
 
     // Get DOM elements
     let mondayHours = document.querySelectorAll("#mon .hours");
-    let tuesdayHours = document.querySelectorAll("#tues .hours");
+    let tuesdayHours = document.querySelectorAll("#tue .hours");
     let wednesdayHours = document.querySelectorAll("#wed .hours");
-    let aprilDay = document.querySelectorAll("#Apr .dayinmonth");
-    let mayDay = document.querySelectorAll("#May .dayinmonth");
+    let thursdayHours = document.querySelectorAll("#thu .hours");
+    let fridayHours = document.querySelectorAll("#fri .hours");
+    let saturdayHours = document.querySelectorAll("#sat .hours");
+    let sundayHours = document.querySelectorAll("#sun .hours");
+    let janDay = document.querySelectorAll("#jan .dayinmonth");
+    let marDay = document.querySelectorAll("#mar .dayinmonth");
+    let aprDay = document.querySelectorAll("#apr .dayinmonth");
+    let mayDay = document.querySelectorAll("#may .dayinmonth");
+    let junDay = document.querySelectorAll("#jun .dayinmonth");
+    let julDay = document.querySelectorAll("#jul .dayinmonth");
+    let morningDiv = document.getElementById("morning");
+    let eveningDiv = document.getElementById("evening");
+    let springDiv = document.querySelector("#seasons .fourss:first-child");
     let nowMinutes = document.querySelectorAll(".min");
     let nowSeconds = document.querySelectorAll(".sec");
+    let nowHours = document.querySelectorAll(".hours");
 
     // Highlight current minute
     nowMinutes.forEach(minute => minute.style.backgroundColor = "transparent");
-    nowMinutes[thisMinute - 1].style.backgroundColor = "yellow";
+    nowMinutes[thisMinute].style.backgroundColor = "yellow";
 
     // Highlight current second
     nowSeconds.forEach(second => second.style.backgroundColor = "transparent");
+
+
+
+
+
     if (thisSecond !== 0)
         nowSeconds[thisSecond - 1].style.backgroundColor = "yellow";
 
     // Highlight current hour based on weekday
+    nowHours.forEach(hour => hour.style.backgroundColor = "transparent");
     if (thisWeekday === 1)
-        mondayHours[thisHour - 1].style.backgroundColor = "yellow";
+        mondayHours[thisHour].style.backgroundColor = "yellow";
     else if (thisWeekday === 2)
-        tuesdayHours[thisHour - 1].style.backgroundColor = "yellow";
+        tuesdayHours[thisHour].style.backgroundColor = "yellow";
     else if (thisWeekday === 3)
-        wednesdayHours[thisHour - 1].style.backgroundColor = "yellow";
+        wednesdayHours[thisHour].style.backgroundColor = "yellow";
+    else if (thisWeekday === 4)
+        thursdayHours[thisHour].style.backgroundColor = "yellow";
+    else if (thisWeekday === 5)
+        fridayHours[thisHour].style.backgroundColor = "yellow";
+    else if (thisWeekday === 6)
+        saturdayHours[thisHour].style.backgroundColor = "yellow";
+    else if (thisWeekday === 7)
+        sundayHours[thisHour].style.backgroundColor = "yellow";
 
-    // Highlight current date in April
-    if (thisMonth === 3)
-        aprilDay[thisDate - 1].style.backgroundColor = "yellow";
-    // Display date
+
+
+
+    if (thisMonth === 0)
+        janDay[thisDate - 1].style.backgroundColor = "yellow";
+    else if (thisMonth === 1)
+        febDay[thisDate - 1].style.backgroundColor = "yellow";
+    else if (thisMonth === 2)
+        marDay[thisDate - 1].style.backgroundColor = "yellow";
+    else if (thisMonth === 3)
+        aprDay[thisDate - 1].style.backgroundColor = "yellow";
+    else if (thisMonth === 4)
+        mayDay[thisDate - 1].style.backgroundColor = "yellow";
+    else if (thisMonth === 5)
+        junDay[thisDate - 1].style.backgroundColor = "yellow";
+    else if (thisMonth === 6)
+        julDay[thisDate - 1].style.backgroundColor = "yellow";
+
+
+    //season!
+    if (thisMonth >= 2 && thisMonth <= 5) {
+        springDiv.style.backgroundColor = "rgb(152,251,152)";
+    }
+    //day and night
+    if (thisHour >= 18 && thisMonth <= 6) {
+        springDiv.style.backgroundColor = "rgb(152,251,152)";
+    }
+
+    if (thisHour >= 5 && thisHour < 19) {
+        // Highlight the "day" div
+        morningDiv.style.backgroundColor = "yellow";
+    } else {
+        // Unhighlight the "day" div if it's outside the range
+        eveningDiv.style.backgroundColor = "rgb(100,149,237)";
+    }
+
     let dateElement = document.getElementById("dateHere");
     dateElement.innerHTML = months[thisMonth] + " / " + thisDate + ", " + thisYear;
 
-    // Format hour to always have two digits
     let formattedHour = thisHour < 10 ? "0" + thisHour : thisHour;
 
     // Display time

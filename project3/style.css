@@ -29,7 +29,7 @@ body {
     height: 24vw;
     display: flex;
     flex-direction: column;
-    align-items: centered;
+    align-items: left;
 }
 
 .hours {
@@ -69,8 +69,8 @@ body {
     background-color: rgb(255, 255, 255);
     display: flex;
     gap: 2px;
-    width: calc(4vw/6);
-    height: calc(10vw/10);
+    width: calc(5vw/5);
+    height: calc(10vw/12);
     margin: auto;
     align-items: left;
 
@@ -88,6 +88,9 @@ body {
     display: flex;
     background-color: rgb(255, 255, 255);
     gap: 2px;
+    text-align: center;
+    display: flex;
+    align-items: center;
 
 
 }
@@ -116,13 +119,16 @@ body {
 .monthname {
     width: calc(30vw/4);
     height: calc(24vw/12);
-    background-color: rgba(255, 255, 255, 0.486);
+    background-color: rgb(255, 255, 255);
     display: flex;
+    text-align: center;
+    display: flex;
+    align-items: center;
 }
 
 .monthnumber {
     width: 30vw;
-    height: calc(24vw/4);
+    height: calc(24vw/6);
     display: flex;
 
 }
@@ -132,13 +138,23 @@ body {
     display: flex;
     flex-wrap: wrap;
     background-color: white;
-    align-items: centered;
+    text-align: center;
+    /* Center-align text */
+    display: flex;
+    /* Enable flexbox */
+
 }
 
 .fourss {
     width: calc(30vw/4);
-    height: 2vw;
+    height: 4vw;
     border: black;
+    text-align: center;
+    /* Center-align text */
+    display: flex;
+    /* Enable flexbox */
+    /* Horizontally center-align content */
+    align-items: center;
 }
 
 .monthday {
@@ -162,11 +178,10 @@ body {
 }
 
 .dayinmonth {
-    background-color: rgba(255, 255, 255, 0.173);
     width: calc(30vw/4/8);
     height: calc(4vw/6);
     margin: auto;
-    text-align: center;
+    text-align: left;
 }
 
 .blank {
@@ -178,10 +193,13 @@ body {
 
 .weekname {
     width: calc(35vw/7);
-    height: 5vw;
-    align-items: center;
+    height: 3vw;
+    align-items: left;
     background-color: white;
     gap: 2px;
+    text-align: center;
+    display: flex;
+    align-items: center;
 }
 
 .weekcontainer {
@@ -205,4 +223,13 @@ body {
     top: 0;
     right: 0;
     background: red;
+}
+
+.now {
+    width: 10vw;
+    height: 3vw;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    background-color: rgb(226, 226, 226);
 }
