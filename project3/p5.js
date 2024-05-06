@@ -14,9 +14,9 @@ let s1 = function (sketch) {
     osc.start();
     osc.amp(0.7);
     // start at 700Hz
-    osc.freq(60);
+    osc.freq(100);
     // ramp to 60Hz over 0.7 seconds
-    osc.freq(0, 60);
+    osc.freq(0, 100);
     osc.amp(0, 0.5, 60);
   }
 };
