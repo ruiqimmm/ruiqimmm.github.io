@@ -238,6 +238,7 @@ body {
     display: flex;
     align-items: center;
     flex-direction: row;
+    width: 35vw;
 }
 
 #sound1 {
