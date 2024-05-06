@@ -1,5 +1,12 @@
 body {
     background-color: rgb(214, 214, 214);
+    trasition: 0.3s;
+    transform: scale(1);
+}
+
+div {
+    trasition: 0.3s;
+
 }
 
 .calendar {
@@ -218,12 +225,6 @@ body {
     display: inline-block
 }
 
-#sound {
-    position: fixed;
-    top: 0;
-    right: 0;
-    background: red;
-}
 
 .now {
     width: 10vw;
@@ -232,4 +233,25 @@ body {
     display: flex;
     align-items: center;
     background-color: rgb(226, 226, 226);
+}
+
+.allthesound {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+#sound1 {
+    width: 4vw;
+    height: 4vw;
+}
+
+#sound2 {
+    width: 4vw;
+    height: 4vw;
+}
+
+#sound3 {
+    width: 4vw;
+    height: 4vw;
 }

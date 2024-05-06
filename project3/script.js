@@ -61,7 +61,7 @@ function updateTime() {
         fridayHours[thisHour].style.backgroundColor = "yellow";
     else if (thisWeekday === 6)
         saturdayHours[thisHour].style.backgroundColor = "yellow";
-    else if (thisWeekday === 7)
+    else if (thisWeekday === 0)
         sundayHours[thisHour].style.backgroundColor = "yellow";
 
 
@@ -93,10 +93,12 @@ function updateTime() {
     }
 
     if (thisHour >= 5 && thisHour < 19) {
-        // Highlight the "day" div
+        // 高亮显示"day" div，透明化"evening" div
         morningDiv.style.backgroundColor = "yellow";
+        eveningDiv.style.backgroundColor = "white";
     } else {
-        // Unhighlight the "day" div if it's outside the range
+        // 高亮显示"evening" div，透明化"day" div
+        morningDiv.style.backgroundColor = "white";
         eveningDiv.style.backgroundColor = "rgb(100,149,237)";
     }
 
