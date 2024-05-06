@@ -259,3 +259,13 @@ body {
     display: flex;
     font-size: 2vw;
 }
+
+#top {
+    width: 75vw;
+    display: flex;
+
+}
+
+#weather {
+    color: white;
+}

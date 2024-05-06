@@ -1,11 +1,10 @@
-// 第一个 canvas 的 p5.js 实例
+// Define the p5.js sketch
 let s1 = function (sketch) {
-  let osc, soundLoop;
+  let osc;
 
   sketch.setup = function () {
     let cnv = sketch.createCanvas(100, 100);
     cnv.parent("sound");
-    cnv.mousePressed(playOscillator);
     osc = new p5.Oscillator(300);
     sketch.background(220);
     sketch.text('🎵', 10, 20);
@@ -13,7 +12,7 @@ let s1 = function (sketch) {
 
   function playOscillator() {
     osc.start();
-    osc.amp(0.5);
+    osc.amp(0.7);
     // start at 700Hz
     osc.freq(60);
     // ramp to 60Hz over 0.7 seconds
@@ -22,8 +21,21 @@ let s1 = function (sketch) {
   }
 };
 
-// 创建第一个 p5.js 实例
-new p5(s1);
+// Create a new p5.js instance with the sketch
+let mySketch = new p5(s1);
+
+// Function to update time every minute and trigger playOscillator
+function updateTime() {
+  let currentTime = new Date();
+  let currentMinutes = currentTime.getMinutes();
+  if (currentMinutes === 0) {
+    mySketch.playOscillator();
+  }
+}
+
+// Set an interval to check the time and trigger playOscillator if necessary
+setInterval(updateTime, 60000); // Check every minute
+
 
 // 第二个 canvas 的 p5.js 实例
 let s2 = function (sketch) {
