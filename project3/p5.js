@@ -1,10 +1,11 @@
-// Define the p5.js sketch
+// 第一个 canvas 的 p5.js 实例
 let s1 = function (sketch) {
-  let osc;
+  let osc, soundLoop;
 
   sketch.setup = function () {
     let cnv = sketch.createCanvas(100, 100);
     cnv.parent("sound");
+    cnv.mousePressed(playOscillator);
     osc = new p5.Oscillator(300);
     sketch.background(220);
     sketch.text('🎵', 10, 20);
@@ -12,35 +13,22 @@ let s1 = function (sketch) {
 
   function playOscillator() {
     osc.start();
-    osc.amp(0.7);
+    osc.amp(0.5);
     // start at 700Hz
-    osc.freq(100);
+    osc.freq(60);
     // ramp to 60Hz over 0.7 seconds
-    osc.freq(0, 100);
+    osc.freq(0, 60);
     osc.amp(0, 0.5, 60);
   }
 };
 
-// Create a new p5.js instance with the sketch
-let mySketch = new p5(s1);
-
-// Function to update time every minute and trigger playOscillator
-function updateTime() {
-  let currentTime = new Date();
-  let currentMinutes = currentTime.getMinutes();
-  if (currentMinutes === 0) {
-    mySketch.playOscillator();
-  }
-}
-
-// Set an interval to check the time and trigger playOscillator if necessary
-setInterval(updateTime, 60000); // Check every minute
-
+// 创建第一个 p5.js 实例
+new p5(s1);
 
 // 第二个 canvas 的 p5.js 实例
 let s2 = function (sketch) {
   let synth, soundLoop;
-  let notePattern = [71, 62, 57, 64, 45, 56, 67, 48, 59, 50];
+  let notePattern = [71, 62, 57, 64, 0, 45, 56, 67, 48, 59, 50, 0, 57, 62, 53, 57, 64, 46, 59, 62, 67, 67, 48, 43, 71, 62, 57, 64, 0, 45, 56, 67, 48, 59, 50, 0, 62, 71, 68, 64, 69, 64, 62, 67, 62, 71, 67, 0, 44];
 
   sketch.setup = function () {
     let cnv = sketch.createCanvas(100, 100);
@@ -95,7 +83,6 @@ let s3 = function (sketch) {
     monoSynth = new p5.MonoSynth();
   }
 
-
   function playSynth() {
     sketch.userStartAudio();
 
@@ -114,59 +101,74 @@ let s3 = function (sketch) {
 new p5(s3);
 
 
+
 let s4 = function (sketch) {
   let osc, playing, freq, amp;
 
   sketch.setup = function () {
     let cnv = sketch.createCanvas(300, 100);
     cnv.parent("sound4");
-    cnv.mousePressed(playOscillator);
     osc = new p5.Oscillator('sine');
+    playSoundEvery10Sec(); // 每10秒自动播放声音
   }
 
+
   sketch.draw = function () {
-    sketch.background(220);
-    freq = sketch.constrain(sketch.map(sketch.mouseX, 0, sketch.width, 100, 500), 100, 500);
-    amp = sketch.constrain(sketch.map(sketch.mouseY, sketch.height, 0, 0, 1), 0, 1);
+    if (playing) {
+      sketch.background(0, 255, 0); // 播放时的背景颜色为绿色
+    } else {
+      sketch.background(220); // 否则为灰色
+    }
+    let currentTime = new Date();
+    let totalSecondsInDay = 24 * 60 * 60; // 24小时 * 60分钟 * 60秒
+    let currentSeconds = currentTime.getHours() * 3600 + currentTime.getMinutes() * 60 + currentTime.getSeconds();
+    let percentageOfDay = currentSeconds / totalSecondsInDay;
+
+    // 将一天中的时间映射到频率范围
+    freq = sketch.map(percentageOfDay, 0, 1, 100, 1000); // 根据需要调整频率范围
+    amp = 0.2; // 默认振幅
 
     sketch.text('🎵', 10, 20);
-    sketch.text('freq: ' + freq, 20, 40);
-    sketch.text('amp: ' + amp, 20, 60);
+    sketch.text('freq: ' + freq.toFixed(2) + ' Hz', 20, 40);
+    sketch.text('amp: ' + amp.toFixed(2), 20, 60);
 
     if (playing) {
-      // smooth the transitions by 0.1 seconds
-      osc.freq(freq, 0.1);
-      osc.amp(amp, 0.1);
+      // 平滑过渡，持续0.1秒
+      osc.freq(freq, 0.2);
+      osc.amp(amp, 0.2);
     }
   }
 
   function playOscillator() {
-    // starting an oscillator on a user gesture will enable audio
-    // in browsers that have a strict autoplay policy.
-    // See also: userStartAudio();
+    // 在用户手势下启动振荡器，这将在严格执行自动播放策略的浏览器中启用音频。
+    // 参见：userStartAudio();
     osc.start();
     playing = true;
+
+    // 在0.5秒后停止振荡器
+    setTimeout(stopOscillator, 500);
   }
 
-  sketch.mouseReleased = function () {
-    // ramp amplitude to 0 over 0.5 seconds
-    osc.amp(0, 0.5);
+  function stopOscillator() {
+    // 在0.5秒内将振幅减小至0
+    osc.amp(0, 1);
     playing = false;
   }
 
-  // Note velocity (volume, ranging from 0.2 to 0.6)
-  let velocity = 0.2 + sketch.random() * 0.4;
+  function playSoundEvery10Sec() {
+    setInterval(playOscillator, 15000); // 每10秒播放一次声音
+  }
 };
 
-// 创建第四个 p5.js 实例
 new p5(s4);
+
 
 // 第五个 canvas 的 p5.js 实例
 let s5 = function (sketch) {
   let fft, noise, filter;
 
   sketch.setup = function () {
-    let cnv = sketch.createCanvas(300, 100);
+    let cnv = sketch.createCanvas(200, 100);
     cnv.parent("sound5");
     cnv.mouseOver(makeNoise);
     sketch.fill(255, 0, 255);
@@ -217,3 +219,97 @@ let s5 = function (sketch) {
 
 // 创建第五个 p5.js 实例
 new p5(s5);
+
+
+// 第六个 canvas 的 p5.js 实例
+let s6 = function (sketch) {
+  let synth;
+
+  sketch.setup = function () {
+    let cnv = sketch.createCanvas(100, 100);
+    cnv.parent("sound6");
+    sketch.colorMode(sketch.HSB);
+    sketch.background(0, 0, 86);
+    sketch.text('🎵', 10, 20);
+
+    synth = new p5.MonoSynth();
+
+    // 每秒执行一次 playRandomNote 函数
+    setInterval(playRandomNote, 1000);
+  }
+
+  function playRandomNote() {
+    let note = sketch.random(50, 70); // 生成一个随机音符，限制在 MIDI 范围内
+    note = sketch.midiToFreq(note); // 将 MIDI 音符转换为频率
+
+    let timeOffset = sketch.random(0, 2); // 随机生成播放时间的偏移量，范围在 0 到 2 之间
+    synth.play(note, 0.5, timeOffset); // 播放音符
+
+    sketch.background(sketch.random(0, 255), sketch.random(0, 255), sketch.random(0, 255)); // 随机背景颜色
+  }
+};
+
+// 创建第六个 p5.js 实例
+new p5(s6);
+let polySynth;
+let playingColor = false;
+
+let s7 = function (sketch) {
+  sketch.setup = function () {
+    let cnv = sketch.createCanvas(100, 100);
+    cnv.mousePressed(playSynth);
+    cnv.parent("sound7");
+    sketch.background(220);
+    sketch.text(':0', 20, 20);
+
+    polySynth = new p5.PolySynth();
+
+    // Call playSynth every minute
+    setInterval(playSynth, 60000); // 60000 milliseconds = 1 minute
+  }
+
+  sketch.draw = function () {
+    if (playingColor) {
+      sketch.background(sketch.random(255), sketch.random(255), sketch.random(255));
+      playingColor = false; // Reset flag
+    }
+  }
+};
+
+function playSynth() {
+  userStartAudio();
+
+  let dur = 0.5; // note duration (in seconds)
+  let time = 0; // time from now (in seconds)
+  let vel = 0.3; // velocity (volume, from 0 to 1)
+
+  // Get current time
+  let now = new Date();
+
+  // Extract minutes, hour, day, and month
+  let minutes = now.getMinutes();
+  let hour = now.getHours();
+  let day = now.getDate();
+  let month = now.getMonth() + 1; // Adding 1 to get month in range [1, 12]
+
+  // Calculate the musical note based on the sum of the digits
+  let noteIndexMinutes = (minutes % 12) + Math.floor(minutes / 12);
+  let noteIndexHour = (hour % 12) + Math.floor(hour / 12);
+  let noteIndexDay = (day % 12) + Math.floor(day / 12);
+  let noteIndexMonth = (month % 12) + Math.floor(month / 12);
+
+  // Get the corresponding note from the index
+  let notes = ['C4', 'Db4', 'D4', 'Eb4', 'E4', 'F4', 'Gb4', 'G4', 'Ab4', 'A4', 'Bb4', 'B4']; // Notes in an octave
+
+  // Play the synthesized notes simultaneously
+  polySynth.play(notes[noteIndexMinutes], vel, time, dur);
+  polySynth.play(notes[noteIndexHour], vel, time += 1, dur);
+  polySynth.play(notes[noteIndexDay], vel, time += 1.5, dur);
+  polySynth.play(notes[noteIndexMonth], vel, time += 2, dur);
+
+  // Change background color while playing
+  playingColor = true;
+}
+
+// Create the seventh p5.js instance
+new p5(s7);

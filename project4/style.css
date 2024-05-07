@@ -17,13 +17,17 @@ div {
 
 
 body {
-    font-size: 1.5vw;
+    font-size: 1vw;
     letter-spacing: -0.03em;
     transition: 0.3s;
 }
 
+#sectiona {
+    margin-right: 20px;
+}
+
 .containerweek {
-    width: 45vw;
+    width: 42vw;
     height: 71.5vh;
     display: flex;
     flex-wrap: wrap;
@@ -31,7 +35,7 @@ body {
 }
 
 .week {
-    width: calc(45vw/7);
+    width: calc(42vw/7);
     height: 32vw;
     display: flex;
     flex-direction: column;
@@ -49,7 +53,7 @@ body {
 
 .minitues {
     width: 10vw;
-    height: 18vw;
+    height: 21vh;
     display: flex;
     flex-wrap: wrap;
 }
@@ -58,47 +62,47 @@ body {
     background-color: rgb(255, 255, 255);
     display: flex;
     width: calc(10vw/6);
-    height: calc(18vw/10);
+    height: calc(10vw/10);
     margin: auto;
     align-items: left;
     gap: 2px;
 }
 
 .second {
-
     width: 6vw;
-    height: 20vh;
+    height: 26vh;
     display: flex;
     flex-wrap: wrap;
+    font-size: 14px;
 }
 
 .sec {
     background-color: rgb(255, 255, 255);
     display: flex;
     gap: 2px;
-    width: calc(6vw/5);
-    height: calc(12vw/12);
+    width: calc(5vw/5);
+    height: calc(10vw/12);
     margin: auto;
     align-items: left;
 
 }
 
 .half {
-    width: 4vw;
-    height: 12vw;
+    width: 5vw;
+    height: 10vw;
     display: inline-block;
 }
 
 .day {
-    width: 4vw;
-    height: calc(12vw/2);
+    width: 3vw;
+    height: calc(10vw/2);
     display: flex;
     background-color: rgb(255, 255, 255);
     gap: 2px;
     text-align: center;
     display: flex;
     align-items: center;
-
+    justify-content: center;
 
 }
 
@@ -193,7 +197,7 @@ body {
 }
 
 .weekname {
-    width: calc(45vw/7);
+    width: calc(42vw/7);
     height: 3vw;
     align-items: left;
     background-color: white;
@@ -204,20 +208,19 @@ body {
 }
 
 .weekcontainer {
-    width: calc(45vw);
+    width: calc(42vw);
     height: 5vw;
     display: flex;
     flex-direction: row;
     border: solid rgb(255, 78, 78) 1px;
 }
 
-
 #dateHere {
-    display: inline-block;
+    display: inline-block
 }
 
 #timeHere {
-    display: inline-block;
+    display: inline-block
 }
 
 
@@ -227,15 +230,13 @@ body {
     text-align: center;
     display: flex;
     align-items: center;
-    background-color: rgb(231, 227, 227);
-
+    background-color: rgb(226, 226, 226);
 }
 
 .allthesound {
     display: flex;
     align-items: center;
     flex-direction: row;
-    width: 35vw;
 }
 
 #sound1 {
@@ -256,14 +257,4 @@ body {
 .empty {
     display: flex;
     font-size: 2vw;
-}
-
-#top {
-    width: 95vw;
-    display: flex;
-
-}
-
-#weather {
-    color: white;
 }
