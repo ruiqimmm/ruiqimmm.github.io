@@ -103,7 +103,7 @@ function updateTime() {
     }
 
     let dateElement = document.getElementById("dateHere");
-    dateElement.innerHTML = months[thisMonth] + " / " + thisDate + ", " + thisYear;
+    dateElement.innerHTML = thisYear + " / " + months[thisMonth] + " / " + thisDate;
 
     let formattedHour = thisHour < 10 ? "0" + thisHour : thisHour;
 

@@ -1,6 +1,7 @@
 body {
     background-color: rgb(214, 214, 214);
     trasition: 0.3s;
+    font-family: sans-serif;
 }
 
 div {
@@ -166,7 +167,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
-    border-right: 1px solid rgb(253, 253, 253);
+    border-right: 2px solid rgb(214, 214, 214);
 
 }
 
@@ -227,7 +228,7 @@ body {
     text-align: center;
     display: flex;
     align-items: center;
-    background-color: rgb(231, 227, 227);
+    background-color: rgb(230, 230, 230);
 
 }
 
@@ -254,8 +255,8 @@ body {
 }
 
 .empty {
-    display: flex;
-    font-size: 2vw;
+    display: inline-block;
+    font-size: 1vw;
 }
 
 #top {
