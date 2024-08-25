@@ -26,6 +26,11 @@ function updateTime() {
     let mayDay = document.querySelectorAll("#may .dayinmonth");
     let junDay = document.querySelectorAll("#jun .dayinmonth");
     let julDay = document.querySelectorAll("#jul .dayinmonth");
+    let augDay = document.querySelectorAll("#aug .dayinmonth");
+    let sepDay = document.querySelectorAll("#sep .dayinmonth");
+    let octDay = document.querySelectorAll("#oct .dayinmonth");
+    let novDay = document.querySelectorAll("#nov .dayinmonth");
+    let decDay = document.querySelectorAll("#dec .dayinmonth");
     let morningDiv = document.getElementById("morning");
     let eveningDiv = document.getElementById("evening");
     let springDiv = document.querySelector("#seasons .fourss:first-child");
@@ -81,7 +86,16 @@ function updateTime() {
         junDay[thisDate - 1].style.backgroundColor = "yellow";
     else if (thisMonth === 6)
         julDay[thisDate - 1].style.backgroundColor = "yellow";
-
+    else if (thisMonth === 7)
+        augDay[thisDate - 1].style.backgroundColor = "yellow";
+    else if (thisMonth === 8)
+        sepDay[thisDate - 1].style.backgroundColor = "yellow";
+    else if (thisMonth === 9)
+        octDay[thisDate - 1].style.backgroundColor = "yellow";
+    else if (thisMonth === 10)
+        novDay[thisDate - 1].style.backgroundColor = "yellow";
+    else if (thisMonth === 11)
+        decDay[thisDate - 1].style.backgroundColor = "yellow";
 
     //season!
     if (thisMonth >= 2 && thisMonth <= 5) {
