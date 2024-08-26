@@ -34,6 +34,9 @@ function updateTime() {
     let morningDiv = document.getElementById("morning");
     let eveningDiv = document.getElementById("evening");
     let springDiv = document.querySelector("#seasons .fourss:first-child");
+    let summerDiv = document.querySelector("#seasons .fourss:nth-child(2)");
+    let fallDiv = document.querySelector("#seasons .fourss:nth-child(3)");
+    let winterDiv = document.querySelector("#seasons .fourss:nth-child(4)");
     let nowMinutes = document.querySelectorAll(".min");
     let nowSeconds = document.querySelectorAll(".sec");
     let nowHours = document.querySelectorAll(".hours");
@@ -98,9 +101,19 @@ function updateTime() {
         decDay[thisDate - 1].style.backgroundColor = "yellow";
 
     //season!
-    if (thisMonth >= 2 && thisMonth <= 5) {
+    if (thisMonth >= 2 && thisMonth <= 5)
         springDiv.style.backgroundColor = "rgb(152,251,152)";
-    }
+
+    else if (thisMonth >= 6 && thisMonth <= 8)
+        summerDiv.style.backgroundColor = "rgb(152,251,152)";
+
+    else if (thisMonth >= 9 && thisMonth <= 11)
+        fallDiv.style.backgroundColor = "rgb(152,251,152)";
+
+    else if (thisMonth >= 12 && thisMonth <= 2)
+        winterDiv.style.backgroundColor = "rgb(152,251,152)";
+
+
     //day and night
     if (thisHour >= 18 && thisMonth <= 6) {
         springDiv.style.backgroundColor = "rgb(152,251,152)";
