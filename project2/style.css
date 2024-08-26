@@ -16,6 +16,8 @@ body {
     text-align: center;
     transform: scale(1);
     transition: 2s all ease-in-out;
+    font-family: sans-serif;
+
 
 }
 
@@ -90,7 +92,6 @@ img {
 
 .image-container {
     white-space: nowrap;
-    /* 防止自动换行 */
 }
 
 img:hover {
@@ -104,9 +105,7 @@ img:hover {
 .image-container img {
     display: inline-block;
     max-width: 30%;
-    /* 图片宽度最大为容器宽度 */
     height: auto;
-    /* 自动调整图片高度 */
 }
 
 @media screen and (min-width: 2300px) {
