@@ -6,7 +6,7 @@ function updateTime() {
     let thisMonth = today.getMonth();
     let months = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"];
     let thisDate = today.getDate();
-    let thisWeekday = today.getDay(); // Sunday: 0, Monday: 1, ..., Saturday: 6
+    let thisWeekday = today.getDay();
     let thisYear = today.getFullYear();
     let thisHour = today.getHours();
     let thisMinute = today.getMinutes();
@@ -20,23 +20,24 @@ function updateTime() {
     let fridayHours = document.querySelectorAll("#fri .hours");
     let saturdayHours = document.querySelectorAll("#sat .hours");
     let sundayHours = document.querySelectorAll("#sun .hours");
-    let janDay = document.querySelectorAll("#jan .dayinmonth");
-    let marDay = document.querySelectorAll("#mar .dayinmonth");
-    let aprDay = document.querySelectorAll("#apr .dayinmonth");
-    let mayDay = document.querySelectorAll("#may .dayinmonth");
-    let junDay = document.querySelectorAll("#jun .dayinmonth");
-    let julDay = document.querySelectorAll("#jul .dayinmonth");
-    let augDay = document.querySelectorAll("#aug .dayinmonth");
-    let sepDay = document.querySelectorAll("#sep .dayinmonth");
-    let octDay = document.querySelectorAll("#oct .dayinmonth");
-    let novDay = document.querySelectorAll("#nov .dayinmonth");
-    let decDay = document.querySelectorAll("#dec .dayinmonth");
-    let morningDiv = document.getElementById("morning");
-    let eveningDiv = document.getElementById("evening");
-    let springDiv = document.querySelector("#seasons .fourss:first-child");
+    let springDiv = document.querySelector("#seasons .fourss:nth-child(1)");
     let summerDiv = document.querySelector("#seasons .fourss:nth-child(2)");
     let fallDiv = document.querySelector("#seasons .fourss:nth-child(3)");
     let winterDiv = document.querySelector("#seasons .fourss:nth-child(4)");
+    let janDay = document.querySelectorAll("#Jan .dayinmonth");
+    let febDay = document.querySelectorAll("#Feb .dayinmonth");
+    let marDay = document.querySelectorAll("#Mar .dayinmonth");
+    let aprDay = document.querySelectorAll("#Apr .dayinmonth");
+    let mayDay = document.querySelectorAll("#May .dayinmonth");
+    let junDay = document.querySelectorAll("#Jun .dayinmonth");
+    let julDay = document.querySelectorAll("#Jul .dayinmonth");
+    let augDay = document.querySelectorAll("#Aug .dayinmonth");
+    let sepDay = document.querySelectorAll("#Sep .dayinmonth");
+    let octDay = document.querySelectorAll("#Oct .dayinmonth");
+    let novDay = document.querySelectorAll("#Nov .dayinmonth");
+    let decDay = document.querySelectorAll("#Dec .dayinmonth");
+    let morningDiv = document.getElementById("morning");
+    let eveningDiv = document.getElementById("evening");
     let nowMinutes = document.querySelectorAll(".min");
     let nowSeconds = document.querySelectorAll(".sec");
     let nowHours = document.querySelectorAll(".hours");
@@ -47,11 +48,6 @@ function updateTime() {
 
     // Highlight current second
     nowSeconds.forEach(second => second.style.backgroundColor = "transparent");
-
-
-
-
-
     if (thisSecond !== 0)
         nowSeconds[thisSecond - 1].style.backgroundColor = "yellow";
 
@@ -72,9 +68,7 @@ function updateTime() {
     else if (thisWeekday === 0)
         sundayHours[thisHour].style.backgroundColor = "yellow";
 
-
-
-
+    // Highlight current day based on month
     if (thisMonth === 0)
         janDay[thisDate - 1].style.backgroundColor = "yellow";
     else if (thisMonth === 1)
@@ -100,41 +94,35 @@ function updateTime() {
     else if (thisMonth === 11)
         decDay[thisDate - 1].style.backgroundColor = "yellow";
 
-    //season!
-    if (thisMonth >= 2 && thisMonth <= 5)
+    // Highlight current season
+    springDiv.style.backgroundColor = "transparent";
+    summerDiv.style.backgroundColor = "transparent";
+    fallDiv.style.backgroundColor = "transparent";
+    winterDiv.style.backgroundColor = "transparent";
+
+    if (thisMonth >= 2 && thisMonth <= 4)
         springDiv.style.backgroundColor = "rgb(152,251,152)";
-
-    else if (thisMonth >= 6 && thisMonth <= 8)
+    else if (thisMonth >= 5 && thisMonth <= 7)
         summerDiv.style.backgroundColor = "rgb(152,251,152)";
-
-    else if (thisMonth >= 9 && thisMonth <= 11)
+    else if (thisMonth >= 8 && thisMonth <= 10)
         fallDiv.style.backgroundColor = "rgb(152,251,152)";
-
-    else if (thisMonth >= 12 && thisMonth <= 2)
+    else
         winterDiv.style.backgroundColor = "rgb(152,251,152)";
 
-
-    //day and night
-    if (thisHour >= 18 && thisMonth <= 6) {
-        springDiv.style.backgroundColor = "rgb(152,251,152)";
-    }
-
+    // Highlight day and night
     if (thisHour >= 5 && thisHour < 19) {
-        // 高亮显示"day" div，透明化"evening" div
         morningDiv.style.backgroundColor = "yellow";
         eveningDiv.style.backgroundColor = "white";
     } else {
-        // 高亮显示"evening" div，透明化"day" div
         morningDiv.style.backgroundColor = "white";
         eveningDiv.style.backgroundColor = "rgb(100,149,237)";
     }
 
+    // Display date and time
     let dateElement = document.getElementById("dateHere");
     dateElement.innerHTML = thisYear + " / " + months[thisMonth] + " / " + thisDate;
 
     let formattedHour = thisHour < 10 ? "0" + thisHour : thisHour;
-
-    // Display time
     let timeElement = document.getElementById("timeHere");
     timeElement.innerHTML = formattedHour + ":" + (thisMinute < 10 ? "0" + thisMinute : thisMinute) + ":" + (thisSecond < 10 ? "0" + thisSecond : thisSecond);
 }
