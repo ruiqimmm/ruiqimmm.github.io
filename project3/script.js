@@ -129,3 +129,4 @@ function updateTime() {
 
 // Call updateTime every second
 setInterval(updateTime, 1000);
+// ^_^
