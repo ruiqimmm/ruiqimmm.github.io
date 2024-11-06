@@ -21,14 +21,23 @@ function updateTime() {
     let saturdayHours = document.querySelectorAll("#sat .hours");
     let sundayHours = document.querySelectorAll("#sun .hours");
     let janDay = document.querySelectorAll("#jan .dayinmonth");
+    let febDay = document.querySelectorAll("#feb .dayinmonth");
     let marDay = document.querySelectorAll("#mar .dayinmonth");
     let aprDay = document.querySelectorAll("#apr .dayinmonth");
     let mayDay = document.querySelectorAll("#may .dayinmonth");
     let junDay = document.querySelectorAll("#jun .dayinmonth");
     let julDay = document.querySelectorAll("#jul .dayinmonth");
+    let augDay = document.querySelectorAll("#aug .dayinmonth");
+    let sepDay = document.querySelectorAll("#sep .dayinmonth");
+    let octDay = document.querySelectorAll("#oct .dayinmonth");
+    let novDay = document.querySelectorAll("#nov .dayinmonth");
+    let decDay = document.querySelectorAll("#dec .dayinmonth");
     let morningDiv = document.getElementById("morning");
     let eveningDiv = document.getElementById("evening");
     let springDiv = document.querySelector("#seasons .fourss:first-child");
+    let summerDiv = document.querySelector("#seasons .fourss:nth-child(2)");
+    let fallDiv = document.querySelector("#seasons .fourss:nth-child(3)");
+    let winterDiv = document.querySelector("#seasons .fourss:last-child");
     let nowMinutes = document.querySelectorAll(".min");
     let nowSeconds = document.querySelectorAll(".sec");
     let nowHours = document.querySelectorAll(".hours");
@@ -87,6 +96,16 @@ function updateTime() {
     if (thisMonth >= 2 && thisMonth <= 5) {
         springDiv.style.backgroundColor = "rgb(152,251,152)";
     }
+    if (thisMonth >= 5 && thisMonth <= 8) {
+        summerDiv.style.backgroundColor = "rgb(152,251,152)";
+    }
+    if (thisMonth >= 8 && thisMonth <= 11) {
+        fallDiv.style.backgroundColor = "rgb(152,251,152)";
+    }
+    if (thisMonth >= 2 && thisMonth <= 5) {
+        winterDiv.style.backgroundColor = "rgb(152,251,152)";
+    }
+
     //day and night
     if (thisHour >= 18 && thisMonth <= 6) {
         springDiv.style.backgroundColor = "rgb(152,251,152)";
